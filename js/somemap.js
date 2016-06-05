@@ -1,10 +1,10 @@
 var map;
 
 function initialize() {
-  var myCenter = new google.maps.LatLng(39.0997266, -94.5785667 );
+  var myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
   map = new google.maps.Map(document.getElementById('googleMap'), {
     center:myCenter,
-    zoom:12,
+    zoom:11,
     scrollwheel:false,
     draggable:false,
     mapTypeId:google.maps.MapTypeId.ROADMAP
@@ -24,9 +24,20 @@ function initialize() {
                     var locations = data.Locations.elements;
                     var geoJs = location_data_to_geoJson(locations);
                     console.log(geoJs);
-                    put_geoJson_on_map(geoJs)
+                    put_geoJson_on_map(geoJs);
+
                   },
                   simpleSheet: false } );
+
+  map.data.setStyle(function(feature) {
+    console.log({icon:feature.getProperty('icon')});
+    return {icon:feature.getProperty('icon')};
+  });
+
+  map.data.setStyle({
+    icon: "//i.imgur.com/8liV6HN.png",
+    fillColor: 'green'
+  });
 
 }
 
@@ -46,7 +57,7 @@ function location_data_to_geoJson (data) {
       'type':'Feature',
       'geometry': {
         'type':'Point',
-        // 'icon': icon_from_marker_location_type(r),
+        'icon': "http://i.imgur.com/8liV6HN.png",
         'coordinates':[
           r.latitude,
           r.longitude
@@ -69,6 +80,7 @@ function put_geoJson_on_map(geoJs){
       map: map
     });
   }
+
 }
 
 // Loop through the results array and place a marker for each
