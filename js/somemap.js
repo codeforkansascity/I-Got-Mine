@@ -28,17 +28,6 @@ function initialize() {
 
                   },
                   simpleSheet: false } );
-
-  map.data.setStyle(function(feature) {
-    console.log({icon:feature.getProperty('icon')});
-    return {icon:feature.getProperty('icon')};
-  });
-
-  map.data.setStyle({
-    icon: "//i.imgur.com/8liV6HN.png",
-    fillColor: 'green'
-  });
-
 }
 
 
@@ -77,7 +66,8 @@ function put_geoJson_on_map(geoJs){
     var latLng = new google.maps.LatLng(coords[1],coords[0]);
     var marker = new google.maps.Marker({
       position: latLng,
-      map: map
+      map: map,
+      icon: "http://i.imgur.com/YirEmMt.png?1"
     });
   }
 
