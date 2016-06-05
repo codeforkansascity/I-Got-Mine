@@ -219,10 +219,10 @@
   <p>Free Condoms, Event Locations, STD Information, and more from the Kansas City Department of Health</p>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" id="about">
   <div class="row">
     <div class="col-sm-4">
-      <img src="http://i.imgur.com/B5dD90z.jpg" class="image-responsive" alt="Condoms Unwrapped and Standing Up"></img>
+      <img src="http://i.imgur.com/B5dD90z.jpg" class="img-responsive" alt="Condoms Unwrapped and Standing Up"></img>
     </div>
     <div class="col-sm-8">
       <h2>About</h2>
@@ -232,7 +232,7 @@
   </div>
 </div>
 
-<div class="container-fluid bg-grey">
+<div class="container-fluid bg-grey" id="map">
   <div class="row">
       <div class="col-sm-8">
         <h2>Free Condoms</h2>
@@ -240,48 +240,99 @@
         <p><strong>VISION:</strong> Our vision is to give you free condoms.</p>
       </div>
       <div class="col-sm-4">
-        <img src="http://i.imgur.com/HKggdg9.jpg" class="image-responsive" alt="Condoms Unwrapped and Lying Down"></img>
+        <img src="http://i.imgur.com/HKggdg9.jpg" class="img-responsive" alt="Condoms Unwrapped and Lying Down"></img>
       </div>
   </div>
 </div>
 
-<div class="container">
-  <!-- Responsive calendar - START -->
-  <div class="responsive-calendar">
-    <div class="controls">
-        <a class="pull-left" data-go="prev"><div class="btn btn-primary">Prev</div></a>
-        <h4><span data-head-year></span> <span data-head-month></span></h4>
-        <a class="pull-right" data-go="next"><div class="btn btn-primary">Next</div></a>
-    </div><hr/>
-    <div class="day-headers">
-      <div class="day header">Mon</div>
-      <div class="day header">Tue</div>
-      <div class="day header">Wed</div>
-      <div class="day header">Thu</div>
-      <div class="day header">Fri</div>
-      <div class="day header">Sat</div>
-      <div class="day header">Sun</div>
-    </div>
-    <div class="days" data-group="days">
-
-    </div>
-  </div>
-  <!-- Responsive calendar - END -->
+<div class="container" id="events">
+	<h2>Event Calendar</h2>
+	<p>Take a look at local health events on our calendar.</p>
 </div>
 
-<div class="container-fluid bg-grey">
+<div class="container-fluid bg-grey" id="stdinfo">
   <h2>STD Info</h2>
-  <h4>Quick information about the most common STDs and available treatments</h4>
-  <ul>
-    <li>HIV</li>
-    <li>Herpes</li>
-    <li>Chlamydia</li>
-    <li>Gonorrhea</li>
-    <li>Human Papillomavirus (HPV)</li>
-    <li>Syphilis</li>
-    <li>Hepatitis</li>
-  </ul>
   <p>Take a look at local health providers who can help you with STD testing and treatment.</p>
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
+		<li data-target="#myCarousel" data-slide-to="5"></li>
+		<li data-target="#myCarousel" data-slide-to="6"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://i.imgur.com/vXBcXDP.gif?1" alt="HIV">
+      <div class="carousel-caption">
+        <h3>HIV</h3>
+        <p>Quick info on HIV.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="http://i.imgur.com/Q5ZlO5y.jpg?1" alt="Chlamydia">
+      <div class="carousel-caption">
+        <h3>Chlamydia</h3>
+        <p>Quick info on Chlamydia.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="http://i.imgur.com/Q5ZlO5y.jpg?1" alt="Gonorrhea">
+      <div class="carousel-caption">
+        <h3>Gonorrhea</h3>
+        <p>Quick info on Gonorrhea.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="http://i.imgur.com/DC4qoA3.jpg" alt="HPV">
+      <div class="carousel-caption">
+        <h3>Human Papillomavirus (HPV)</h3>
+        <p>Quick info on HPV.</p>
+      </div>
+    </div>
+
+		<div class="item">
+      <img src="http://i.imgur.com/G84JxhG.jpg" alt="Syphilis">
+      <div class="carousel-caption">
+        <h3>Syphilis</h3>
+        <p>Quick info on Syphilis.</p>
+      </div>
+    </div>
+
+		<div class="item">
+      <img src="http://i.imgur.com/21rihhu.jpg" alt="Hepatitis">
+      <div class="carousel-caption">
+        <h3>Hepatitis</h3>
+        <p>Quick info on Hepatitis.</p>
+      </div>
+    </div>
+
+		<div class="item">
+      <img src="http://i.imgur.com/RrvD4zB.jpg" alt="Herpes">
+      <div class="carousel-caption">
+        <h3>Herpes</h3>
+        <p>Quick info on Herpes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 </div>
 
 <div id="googleMap" style="height:400px;width:100%;"></div>
