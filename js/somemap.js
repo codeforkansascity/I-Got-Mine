@@ -71,9 +71,6 @@ function initialize() {
 }
 
 
-function icon_from_marker_location_type(l){
-  return 'icon.jpg';
-}
 function location_data_to_geoJson (data) {
   var gj = {'type':'FeatureCollection','features':[]},
     feature = {},
@@ -98,8 +95,13 @@ function location_data_to_geoJson (data) {
   }
   return gj;
 }
+
+var markerInfoWindowContent = function(m) {
+  return "<h1 class='infowindow'>"+m.prop.Name+"</h1><div>"+m.prop.Details+"</div>"
+};
+
 function put_geoJson_on_map(geoJs){
-  console.log(geoJs);
+  
   var i, coords, lat_lng, marker, fp, icon_url;
   for (var i = 0; i < geoJs.features.length; i++) {
     fp = geoJs.features[i];
@@ -112,14 +114,19 @@ function put_geoJson_on_map(geoJs){
     }else{
       icon_url = IMAGE_URLS.CONDOM;
     }
-    console.log(icon_url);
     marker = new google.maps.Marker({
       position: lat_lng,
       map: map,
-      icon: icon_url
+      icon: icon_url,
+      prop: fp.properties
+    });
+    marker.addListener('click', function() {
+      var infowindow = new google.maps.InfoWindow({
+        content: markerInfoWindowContent(this)
+      });
+      infowindow.open(map, this);
     });
   }
-
 }
 
 // Loop through the results array and place a marker for each
