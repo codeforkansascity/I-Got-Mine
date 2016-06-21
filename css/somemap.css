@@ -1,0 +1,11 @@
+.googleMap{
+  height:400px;
+  width:70%;
+  margin:auto;
+}
+@media only screen and (max-device-width: 480px) {
+  .googleMap{
+    width:100%;
+    margin:auto;
+  }  
+}
