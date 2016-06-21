@@ -8,7 +8,7 @@ function initialize() {
       myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
       map.setCenter(myCenter);
     }, function() {
-      handleNoGeolocation(browserSupportFlag);
+      myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
     });
   }else{
     myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
