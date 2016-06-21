@@ -1,20 +1,7 @@
 var map;
-
-function initialize() {
-  var myCenter;
-  if(navigator.geolocation) {
-    browserSupportFlag = true;
-    navigator.geolocation.getCurrentPosition(function(position) {
-      myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      map.setCenter(myCenter);
-    }, function() {
-      myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
-    });
-  }else{
-    myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
-  }
+function showMap (center) {
   map = new google.maps.Map(document.getElementById('googleMap'), {
-    center:myCenter,
+    center:center,
     zoom:11,
     scrollwheel:false,
     draggable:false,
@@ -39,6 +26,24 @@ function initialize() {
 
                   },
                   simpleSheet: false } );
+}
+function initialize() {
+  var myCenter;
+  if(navigator.geolocation) {
+    browserSupportFlag = true;
+    console.log('support');
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log([position.coords.latitude,position.coords.longitude]);
+      myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      showMap(myCenter);
+    }, function() {
+      myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
+      showMap(myCenter);
+    });
+  }else{
+    myCenter = new google.maps.LatLng(39.0397266, -94.5785667 );
+    showMap(myCenter);
+  }
 }
 
 
