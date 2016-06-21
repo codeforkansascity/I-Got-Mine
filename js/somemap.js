@@ -8,6 +8,11 @@ function showMap (center) {
     mapTypeId:google.maps.MapTypeId.ROADMAP
   });
 
+  var myMarker = new google.maps.Marker({
+    position: center,
+    map: map,
+  });
+
   // Create a <script> tag and set the USGS URL as the source.
   var script = document.createElement('script');
   // (In this example we use a locally stored copy instead.)
