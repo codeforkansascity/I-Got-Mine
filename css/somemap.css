@@ -3,7 +3,7 @@
   width:70%;
   margin:auto;
 }
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 680px) {
   .googleMap{
     width:100%;
     margin:auto;
