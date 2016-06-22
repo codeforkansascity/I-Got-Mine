@@ -11,7 +11,7 @@ Every year, many residents of Kansas City forego services provided by the City o
 
 ## Mockup (mobile)
 
-![i got mine in kc layout 08 - mobile 04 map descr - event](https://cloud.githubusercontent.com/assets/10410203/16285846/36d1369e-389e-11e6-999e-f5cc11fd17ec.png)
+![i got mine in kc layout 08 - mobile 04 map descr - condoms](https://cloud.githubusercontent.com/assets/10410203/16285843/369aad36-389e-11e6-875e-9047c6986766.png)
 
 ## The Team
 
