@@ -5,11 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/igotmine.css">
+  <link rel="stylesheet" href="../css/igotmine.css">  
   <link rel="stylesheet" href="../css/somemap.css">
   <link rel="stylesheet" href="../css/responsive-calendar.css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:400,300,700">
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -22,12 +23,12 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#myPage">I Got Mine</a>
-    </div>
+</div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#map">Free Condoms</a></li>
-        <li><a href="#events">Event Calendar</a></li>
-        <li><a href="#stdinfo">STD Info</a></li>
+        <li><a href="#events">Upcoming Events</a></li>
+        <li><a href="#stdinfo">STD Treatment</a></li>
         <li><a href="#about">About</a></li>
       </ul>
     </div>
@@ -36,10 +37,16 @@
 
 <div class="jumbotron">
   <h1>I Got Mine in KC</h1>
-  <p>Free Condoms, Event Locations, STD Information, and more from the Kansas City Department of Health</p>
+      <ul class="jumbotron">
+        <li>get some:</li>
+        <li><a href="#map">Free Condoms</a></li>
+        <li><a href="#events">Upcoming Events</a></li>
+        <li><a href="#stdinfo">STD Treatment</a></li>
+        <li><a href="#about">from the Kansas City Department of Health</a></li>
+      </ul>
 </div>
 
-<div class="container bg-grey" id="map">
+<div class="container-fluid bg-grey" id="map">
   <div class="row">
     <div class="col-sm-4">
         <h2>Free Condoms</h2>
@@ -52,7 +59,7 @@
   </div>
 </div>
 
-<div class="container-fluid" id="events">
+<div class="container-fluid bg-grey" id="events">
   <div class="row">
     <div class="col-sm-8">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -192,7 +199,7 @@
   </div>
 </div>
 
-<div class="container-fluid" id="about">
+<div class="container-fluid bg-grey" id="about">
   <div class="row">
     <div class="col-sm-4">
       <img class="img-responsive img-rounded" src="http://i.imgur.com/B5dD90z.jpg" alt="Condoms Unwrapped and Standing Up"></img>
@@ -206,7 +213,7 @@
 </div>
 </div>
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid  bg-grey text-center">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
