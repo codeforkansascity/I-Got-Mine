@@ -1,9 +1,8 @@
- /* Add an orange color to all icons and set the font-size */
 		body {
 		font: 400 15px Lato, sans-serif;
 		line-height: 1.8;
 		color: #818181;
-        background: url("../images/igmikc-bkg-condom-strip.png") repeat-x scroll 0 290px, #FF6C2F  url("../images/igmikc-bkg-condom-strip.png") repeat-x scroll 0 420px; 
+        background: url("../images/igmikc-bkg-condom-large.png") no-repeat scroll 350px 170px, #FF6C2F; 
 		}
         h1 {
         font-family: Montserrat, sans-serif;
