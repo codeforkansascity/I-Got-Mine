@@ -1,0 +1,37 @@
+.ok-event {
+    padding: 10px 20px;
+    background: #fff;
+}
+.type-condom, .type-event {
+    padding: 3px 0 7px 45px;
+    font-size: 14px;
+    font-weight:800;
+    letter-spacing: 1px;
+    background-repeat: no-repeat;
+}
+.type-condom {
+    background-image: url("../images/igmikc-map-icon-condom.png");     
+}
+.type-event {
+    background-image: url("../images/igmikc-map-icon-event.png");
+}
+.ok-event h5 {
+    font-size: 35px;
+    margin-top: 0;
+    color:#ff6c2f;
+}
+.ok-event address {
+    margin-bottom: 0;
+}
+.ok-event time {
+    margin-top:0; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:#ff6c2f;
+}
+.ok-event .event-details {
+    line-height:1.2;
+}
+.ok-event a {
+    color:#ff6c2f;
+}
