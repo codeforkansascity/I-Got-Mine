@@ -80,7 +80,7 @@ function location_data_to_geoJson (data) {
   var i, row;
   for(i=data.length;i--;){
     row = data[i];
-    console.log(row);
+    // console.log(row);
     gj.features.push({
       'type':'Feature',
       'geometry': {
@@ -96,12 +96,27 @@ function location_data_to_geoJson (data) {
   return gj;
 }
 
-var markerInfoWindowContent = function(m) {
-  return "<h1 class='infowindow'>"+m.prop.Name+"</h1><div>"+m.prop.Details+"</div>"
-};
+// var markerInfoWindowContent = function(m) {
+//   return "<h1 class='infowindow'>"+m.prop.Name+"</h1><div>"+m.prop.Details+"</div>"
+// };
+// console.log(_.template(''));
 
+
+
+var infowindow_compiled = _.template(
+'<div class="ok-event">'+
+  '<a href id="close-infowindow">close x</a>'+
+  '<aside class="type-<%- prop.Type.toLowerCase() %>"><%= prop.Title %></aside>' +
+  '<h5><%= prop.Name %></h5>'+
+  '<address><%= prop.Address %></address>'+
+  '<time><%= prop.Days %> <%= prop.Hours %></time>'+
+  '<section class="event-details"><%= prop.Name %></section>'+
+  '<a class="event-website"><%= prop.Website %></a>'+
+  '<section class="social-icons">social icons sprite goes here</section>'+
+'</div>');
+
+var infowindowdom = document.getElementById('info-window');
 function put_geoJson_on_map(geoJs){
-  
   var i, coords, lat_lng, marker, fp, icon_url;
   for (var i = 0; i < geoJs.features.length; i++) {
     fp = geoJs.features[i];
@@ -109,8 +124,10 @@ function put_geoJson_on_map(geoJs){
     lat_lng = new google.maps.LatLng(coords[1],coords[0]);
     if(fp.properties.Type.toLowerCase() == POINT_TYPE.CONDOM){
       icon_url = IMAGE_URLS.CONDOM;
+      fp.properties.Title = 'Condom Distribution';
     }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.EVENT){
       icon_url = IMAGE_URLS.EVENT;
+      fp.properties.Title = 'Event';
     }else{
       icon_url = IMAGE_URLS.CONDOM;
     }
@@ -121,13 +138,38 @@ function put_geoJson_on_map(geoJs){
       prop: fp.properties
     });
     marker.addListener('click', function() {
-      var infowindow = new google.maps.InfoWindow({
-        content: markerInfoWindowContent(this)
-      });
-      infowindow.open(map, this);
+      console.log('clicked');
+      // var infowindow = new google.maps.InfoWindow({
+      //   content: markerInfoWindowContent(this)
+      // });
+      // infowindow.open(map, this);
+      var self = this
+      infowindowdom.innerHTML = infowindow_compiled({'prop':self.prop});
+      $(infowindowdom).addClass("activating");
     });
   }
 }
+
+//close window
+function close_info_window() {
+  console.log('close');
+  $(infowindowdom).removeClass("active");
+}
+$('body').on('click', function(e) {
+  if(!$.contains(infowindowdom, e.target) && $(infowindowdom).hasClass("active")){
+    console.log($(infowindowdom));
+    close_info_window();  
+  }
+  if($(infowindowdom).hasClass("activating")){
+    $(infowindowdom).removeClass("activating");
+    $(infowindowdom).addClass("active");
+  }
+  if(e.target.id == 'close-infowindow'){
+    console.log('close button');
+    e.preventDefault();
+    close_info_window();
+  }
+});
 
 // Loop through the results array and place a marker for each
 // set of coordinates.

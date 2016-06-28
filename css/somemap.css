@@ -1,6 +1,5 @@
 .googleMap{
   height:400px;
-  width:70%;
   margin:auto;
 }
 @media only screen and (max-device-width: 680px) {
@@ -11,4 +10,25 @@
 }
 h1.infowindow{
   font-size: 20px;
+}
+.map-frame{
+  position: relative;
+}
+/*.googleMap{
+  position: absolute;
+  top: 0;
+  left: 0;
+}*/
+.info-window{
+  display: none;
+}
+.info-window.active, .info-window.activating{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 400px;
+  display: block;
+}
+.ok-event{
+  height: 400px;
 }
