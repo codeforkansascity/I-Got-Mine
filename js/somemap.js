@@ -169,8 +169,8 @@ $('body').on('click', function(e) {
     e.preventDefault();
     close_info_window();
   }
-}).keypress(function(e) {
-  if(e.which == 27){
+}).keyup(function(e) {
+  if(e.keyCode == 27){
     close_info_window();
   }
 });
