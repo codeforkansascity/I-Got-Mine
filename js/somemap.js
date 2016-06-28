@@ -169,6 +169,10 @@ $('body').on('click', function(e) {
     e.preventDefault();
     close_info_window();
   }
+}).keypress(function(e) {
+  if(e.which == 27){
+    close_info_window();
+  }
 });
 
 // Loop through the results array and place a marker for each
