@@ -324,3 +324,8 @@
 .ok-event a {
     color:#ff6c2f;
 }
+
+/* event carousel */
+.event-carousel-inner .item img{
+  height:400px;
+}
