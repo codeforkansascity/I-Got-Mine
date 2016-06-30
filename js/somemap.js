@@ -109,8 +109,9 @@ var infowindow_compiled = _.template(
   '<aside class="type-<%- prop.Type.toLowerCase() %>"><%= prop.Title %></aside>' +
   '<h5><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
+  '<div><a target="_blank" href="http://maps.google.com/?q=<%= prop.Address %>">view on google map</a></div>' +
   '<time><%= prop.Days %> <%= prop.Hours %></time>'+
-  '<section class="event-details"><%= prop.Name %></section>'+
+  '<section class="event-details"><%= prop.Details %></section>'+
   '<a class="event-website"><%= prop.Website %></a>'+
   '<section class="social-icons">social icons sprite goes here</section>'+
 '</div>');
@@ -124,10 +125,11 @@ function put_geoJson_on_map(geoJs){
     lat_lng = new google.maps.LatLng(coords[1],coords[0]);
     if(fp.properties.Type.toLowerCase() == POINT_TYPE.CONDOM){
       icon_url = IMAGE_URLS.CONDOM;
-      fp.properties.Title = 'Condom Distribution';
+      fp.properties.Title = 'Free Condoms';
     }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.EVENT){
       icon_url = IMAGE_URLS.EVENT;
       fp.properties.Title = 'Event';
+      // fp.properties.Title = 'STD Treatment Center';
     }else{
       icon_url = IMAGE_URLS.CONDOM;
     }
