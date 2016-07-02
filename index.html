@@ -110,11 +110,25 @@
 
 <div class="container-fluid bg-grey" id="stdinfo">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-12">
       <h2>STD Treatment</h2>
-      <p></p>
-    </div>
-    <div class="col-sm-8">
+      <!-- flipper card-->
+      <div id="std-card-1" class="flip-container std-card">
+        <div class="flipper">
+          <div class="front">
+            <img class="img-responsive img-rounded" src="http://i.imgur.com/vXBcXDP.gif?1" alt="HIV">
+          </div>
+          <div class="back std-card-info">
+            <!-- <img class="img-responsive img-rounded" src="http://i.imgur.com/vXBcXDP.gif?1" alt="HIV"> -->
+            <h3>HIV</h3>
+            <p>Quick info on HIV.</p>
+          </div>
+        </div>
+        <div class="flip-button">
+          <button onclick="document.querySelector('#std-card-1').classList.toggle('hover');" class="btn">Toggle Flip</button>
+        </div>
+      </div>
+
       <div id="std" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -262,6 +276,7 @@ $(document).ready(function(){
 <script src="js/lodash.js"></script>
 <script src="js/somemap.js"></script>
 <script src="js/events.js"></script>
+<script src="js/flipper.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
     </script>

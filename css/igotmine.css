@@ -304,3 +304,78 @@ color: #fff !important;
   margin:0 auto;
   margin-bottom: 20px
 }
+
+/* flipper css from https://davidwalsh.name/css-flip */
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+/* flip the pane when hovered */
+.flip-container.flipped .flipper .front{
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.flip-container.flipped .flipper .back{
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+/* flip speed goes here */
+.flipper .front .back{
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  /*z-index: 2;*/
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(-180deg);
+}
+
+/* std card */
+.std-card, .std-card .front, .std-card .back{
+  width:100%;
+  max-width: 600px;
+  height: 420px;
+}
+.std-card{
+  position: relative;
+}
+.std-card img{
+  margin: 0 auto;
+}
+.flip-button{
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.flip-button button{
+  width: 200px;
+  margin: 0 auto;
+  background-color: #ffa23c;
+  color: white;
+}
+.std-card-info{
+  background-color: white;
+  padding: 20px;
+}
