@@ -22,7 +22,7 @@ function showMap (center) {
     center:center,
     zoom:11,
     scrollwheel:false,
-    draggable:false,
+    draggable:true,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   });
 
