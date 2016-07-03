@@ -34,7 +34,8 @@ h1.infowindow{
   padding: 10px 20px;
   background: #fff;
   height: 400px;
-  max-width: 500px;
+  width: 90%;
+  max-width: 400px;
 }
 .type-condom, .type-event {
   padding: 3px 0 7px 45px;
