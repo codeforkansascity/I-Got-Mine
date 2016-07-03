@@ -1,15 +1,16 @@
-		body {
+	body {
 		font: 400 15px Lato, sans-serif;
 		line-height: 1.8;
 		color: #818181;
-        background: url("../images/igmikc-bkg-condom-large.png") no-repeat scroll 350px 170px, #FF6C2F; 
+        background: url("../images/igmikc-bkg-condom-large.png") no-repeat scroll 150px 100px, #FF6C2F; 
 		}
         h1 {
         font-family: Montserrat, sans-serif;
-        font-size: 60px; 
+        font-size: 36px; 
         font-weight: 700;
+        line-height: 1.2;
         margin:0;
-        padding:0;  
+        padding:0;   
         }
         h2, h3, h4 {
         font-family: Quicksand, Montserrat, sans-serif;
@@ -26,22 +27,23 @@
 		color: #303030;
 		margin-bottom: 30px;
 		}
-        a {    
+        a {  
+        color: #ff392f;
         transition: all 0.15s linear 0s;
         }
 
 /* jumbotron (top of the screen) styles - OK */
 .jumbotron {
     color: #fff;
-    padding: 100px 5% 1px;   
-    font-family: Quicksand, Montserrat, sans-serif;
+    padding: 65px 5% 1px;  
+    margin-bottom: 10px;
     background-color: transparent;
 }
 .jumbotron ul {
     margin-top: 0;
     padding-top: 0;
     font-family: Quicksand, Montserrat, sans-serif;
-    font-size: 40px;
+    font-size: 24px;
     text-decoration: none;
     color:#ffa23c;
 }
@@ -70,13 +72,12 @@
     padding-left: 0px;
     margin-left: -23px;
 }
-
 .jumbotron li:last-child {  
     padding-left: 0px;
     margin-left: -23px;
 }
 .jumbotron li:last-child a { 
-    font-size: 24px;
+    font-size: 18px;
     padding:20px 0 0 0; 
     border:none;
     background: transparent;
@@ -91,13 +92,22 @@
     body {
         background: url(../images/igmikc-bkg-couple.png) no-repeat fixed 95% 80px, #FF6C2F url("../images/igmikc-bkg-condom-strip.png") repeat-x scroll 0 290px;
     }
+    h2 {
+		font-size: 24px;
+		}
+    .jumbotron {
+    padding: 100px 5% 1px;   
+    margin-bottom: 20px;
+    }
     .jumbotron h1 {
+        font-size: 60px; 
         padding: 5px 0 15px 100px;
         background: url(../images/igmikc-condom-package-large.png) no-repeat 0 0;
     }
     .jumbotron ul {
        padding-left:125px;  
-    }
+       font-size: 40px;
+}
     .jumbotron li a {
        width:400px; 
     }
