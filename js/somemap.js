@@ -220,6 +220,8 @@ $(document).ready(function() {
     }
   });
   $('body').on('click', '.highlight-marker', function(e) {
+    e.preventDefault();
     highlight_marker($(e.target).data('type'));
+    return false;
   });
 });
