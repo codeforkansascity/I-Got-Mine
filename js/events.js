@@ -18,7 +18,7 @@ function locations_to_recent_events(locations) {
     thres_date = new Date();
   thres_date.setMonth(thres_date.getMonth()+1);
   for(var i=locations.length;i--;){
-    console.log(locations[i].Type.toLowerCase());    
+    // console.log(locations[i].Type.toLowerCase());    
     if(locations[i].Type.toLowerCase() == 'event' && new Date(locations[i].Date) < thres_date){
       if(locations[i].EventImage == ''){
         locations[i].EventImage = DEFAULT_EVENT_IMAGE;
