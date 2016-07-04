@@ -1,6 +1,7 @@
 var IMAGE_URLS = {
   CONDOM: "images/igmikc-map-icon-condom.png",
-  EVENT: "images/igmikc-map-icon-event.png"
+  EVENT: "images/igmikc-map-icon-event.png",
+  TREATMENT: "images/igmikc-map-icon-treatment.png"
 };
 var DEFAULT_MAP_CENTER = {
   LAT: 39.0397266,
@@ -8,7 +9,8 @@ var DEFAULT_MAP_CENTER = {
 };
 var POINT_TYPE = {
   CONDOM: 'condom',
-  EVENT: 'event'
+  EVENT: 'event',
+  TREATMENT: 'treatment'
 };
 var map;
 
@@ -102,7 +104,7 @@ function location_data_to_geoJson (data) {
 // console.log(_.template(''));
 
 
-
+var SNS = ['Twitter','Facebook','Instagram'];
 var infowindow_compiled = _.template(
 '<div class="ok-event">'+
   '<a href id="close-infowindow" class="pull-right">close x</a>'+
@@ -113,10 +115,18 @@ var infowindow_compiled = _.template(
   '<time><%= prop.Days %> <%= prop.Hours %></time>'+
   '<section class="event-details"><%= prop.Details %></section>'+
   '<a class="event-website"><%= prop.Website %></a>'+
-  '<section class="social-icons">social icons sprite goes here</section>'+
+  '<section class="icons-social">'+
+  '<% _.forEach(SNS, function(s){'+
+  'if(prop[s] !== ""){%>'+
+  '<span><a target="_blank" href="<%= prop[s] %>" '+
+  'class="icon-social-<%-s.toLowerCase()%>"></a></span>'+
+  '<%}'+
+  '})%>'+
+  '</section>'+
 '</div>');
 
 var infowindowdom = document.getElementById('info-window');
+var markers = [];
 function put_geoJson_on_map(geoJs){
   var i, coords, lat_lng, marker, fp, icon_url;
   for (var i = 0; i < geoJs.features.length; i++) {
@@ -129,7 +139,9 @@ function put_geoJson_on_map(geoJs){
     }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.EVENT){
       icon_url = IMAGE_URLS.EVENT;
       fp.properties.Title = 'Event';
-      // fp.properties.Title = 'STD Treatment Center';
+    }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.TREATMENT){
+      icon_url = IMAGE_URLS.TREATMENT;
+      fp.properties.Title = 'STD Treatment Center';
     }else{
       icon_url = IMAGE_URLS.CONDOM;
     }
@@ -140,15 +152,17 @@ function put_geoJson_on_map(geoJs){
       prop: fp.properties
     });
     marker.addListener('click', function() {
-      console.log('clicked');
+      // console.log('clicked');
       // var infowindow = new google.maps.InfoWindow({
       //   content: markerInfoWindowContent(this)
       // });
       // infowindow.open(map, this);
       var self = this
+      console.log(self.prop);
       infowindowdom.innerHTML = infowindow_compiled({'prop':self.prop});
       $(infowindowdom).addClass("activating");
     });
+    markers.push(marker);
   }
 }
 
@@ -157,25 +171,21 @@ function close_info_window() {
   console.log('close');
   $(infowindowdom).removeClass("active");
 }
-$('body').on('click', function(e) {
-  if(!$.contains(infowindowdom, e.target) && $(infowindowdom).hasClass("active")){
-    console.log($(infowindowdom));
-    close_info_window();  
+
+function highlight_marker (marker_type) {
+  var m;
+  for(var i=markers.length;i--;){
+    m = markers[i];
+    if(m.icon.indexOf('-selected') !== -1){
+      m.setIcon(m.icon.replace('-selected.', '.'));
+    }
+    if(m.prop.Type.toLowerCase() === marker_type.toLowerCase() &&
+      m.icon.indexOf('-selected') === -1){
+      m.setIcon(m.icon.replace('.', '-selected.'));
+    }
   }
-  if($(infowindowdom).hasClass("activating")){
-    $(infowindowdom).removeClass("activating");
-    $(infowindowdom).addClass("active");
-  }
-  if(e.target.id == 'close-infowindow'){
-    console.log('close button');
-    e.preventDefault();
-    close_info_window();
-  }
-}).keyup(function(e) {
-  if(e.keyCode == 27){
-    close_info_window();
-  }
-});
+}
+
 
 // Loop through the results array and place a marker for each
 // set of coordinates.
@@ -189,3 +199,27 @@ window.eqfeed_callback = function(results) {
     });
   }
 }
+$(document).ready(function() {
+  $('body').on('click', function(e) {
+    if(!$.contains(infowindowdom, e.target) && $(infowindowdom).hasClass("active")){
+      console.log($(infowindowdom));
+      close_info_window();  
+    }
+    if($(infowindowdom).hasClass("activating")){
+      $(infowindowdom).removeClass("activating");
+      $(infowindowdom).addClass("active");
+    }
+    if(e.target.id == 'close-infowindow'){
+      console.log('close button');
+      e.preventDefault();
+      close_info_window();
+    }
+  }).keyup(function(e) {
+    if(e.keyCode == 27){
+      close_info_window();
+    }
+  });
+  $('body').on('click', '.highlight-marker', function(e) {
+    highlight_marker($(e.target).data('type'));
+  });
+});
