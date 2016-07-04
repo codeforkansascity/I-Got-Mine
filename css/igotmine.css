@@ -1,36 +1,39 @@
-	body {
-		font: 400 15px Lato, sans-serif;
-		line-height: 1.8;
-		color: #818181;
-        background: url("../images/igmikc-bkg-condom-large.png") no-repeat scroll 150px 100px, #FF6C2F; 
-		}
-        h1 {
-        font-family: Montserrat, sans-serif;
-        font-size: 36px; 
-        font-weight: 700;
-        line-height: 1.2;
-        margin:0;
-        padding:0;   
-        }
-        h2, h3, h4 {
-        font-family: Quicksand, Montserrat, sans-serif;
-        }
-		h2 {
-		font-size: 24px;
-		text-transform: uppercase;
-		color: #303030;
-		margin-bottom: 30px;
-		}
-		h4 {
-		font-size: 19px;
-		line-height: 1.375em;
-		color: #303030;
-		margin-bottom: 30px;
-		}
-        a {  
-        color: #41618b;
-        transition: all 0.15s linear 0s;
-        }
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+    background: url("../images/igmikc-bkg-condom-large.png") no-repeat scroll 150px 100px, #FF6C2F; 
+}
+h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 36px; 
+    font-weight: 700;
+    line-height: 1.2;
+    margin:0;
+    padding:0;   
+}
+h2, h3, h4 {
+    font-family: Quicksand, Montserrat, sans-serif;
+}
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    margin-bottom: 30px;
+}
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    margin-bottom: 30px;
+}
+a {  
+    color: #386fb8;
+    transition: all 0.15s linear 0s;
+}
+a:hover {
+    color: #397eda;
+}
 
 /* jumbotron (top of the screen) styles - OK */
 .jumbotron {
@@ -227,7 +230,7 @@ background-color: #fff !important;
 border-color: transparent;
 color: #fff !important;
 }
-/* adjustments to accomodate logo in top corner -OK */
+/* adjustment to accomodate logo in top corner -OK */
         .navbar-brand {
         padding: 0px 0px;
         height: 48px;
