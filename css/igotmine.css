@@ -796,3 +796,25 @@ color: #fff !important;
     margin-top:55px;
     background: #afacab;
 }
+footer {
+    background: #e56935;
+    color: #fff;
+}
+footer.container-fluid {
+    padding: 60px 20px 20px;
+}
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+footer .glyphicon:hover {
+    color: #fff;
+}
+footer .code-for-kc-logo {
+    display: inline-block;
+    width: 181px;
+    height: 58px;
+    margin: 20px 0 0 0;
+    background: url("../images/developed-by-codeforkc.png") no-repeat;  
+}
