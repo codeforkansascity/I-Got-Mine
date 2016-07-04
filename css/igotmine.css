@@ -16,9 +16,9 @@ h2, h3, h4 {
     font-family: Quicksand, Montserrat, sans-serif;
 }
 h2 {
-    font-size: 24px;
+    font-size: 30px;
     text-transform: uppercase;
-    color: #303030;
+    color: #f4511e;
     margin-bottom: 30px;
 }
 h4 {
@@ -96,7 +96,7 @@ a:hover {
         background: url(../images/igmikc-bkg-couple.png) no-repeat fixed 95% 80px, #FF6C2F url("../images/igmikc-bkg-condom-strip.png") repeat-x scroll 0 290px;
     }
     h2 {
-		font-size: 24px;
+		font-size: 40px;
 		}
     .jumbotron {
     padding: 100px 5% 1px;   
@@ -391,4 +391,16 @@ color: #fff !important;
 .std-card-info{
   background-color: white;
   padding: 20px;
+}
+
+#about {
+    background: #3e495a;
+}
+.about-description {
+    color: #b7bdc5;
+}
+.about-logos {
+    padding:40px;
+    margin-top:55px;
+    background: #afacab;
 }
