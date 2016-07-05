@@ -755,15 +755,19 @@ color: #fff !important;
     background: #fff;
     border: solid #ccc 1px; 
     border-radius: 6px;
+    min-height: 270px;
+    position: relative;
 }
 .ok-treatment h5 {
     font-size: 16px;
     font-weight: 700; 
     margin-top: 0;
     color:#ff6c2f;
+    min-height: 34px
 }
 .ok-treatment address {
     margin-bottom: 0;
+    min-height: 40px;
 }
 .ok-treatment time {
     margin-top:0; 
@@ -773,6 +777,7 @@ color: #fff !important;
 .ok-treatment .treatment-details {
     margin-top:3px;
     line-height:1.2;
+    min-height: 70px;
 }
 
 
