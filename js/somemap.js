@@ -115,7 +115,7 @@ var infowindow_compiled = _.template(
 '<div class="ok-event">'+
   '<a href id="close-infowindow" class="pull-right">close x</a>'+
   '<aside class="type-<%- prop.Type.toLowerCase() %>"><%= prop.Title %></aside>' +
-  '<h5></h5>'+
+  '<h5><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
   '<div><a target="_blank" href="http://maps.google.com/?q=<%= prop.Address %>">view on google map</a></div>' +
   '<time><%= prop.Days %> <%= prop.Hours %></time>'+
