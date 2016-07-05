@@ -194,7 +194,6 @@ function show_marker_by_id(id){
   m = markers[id];
   if(typeof m !== 'undefined'){
     m.setIcon(m.icon.replace('.', '-selected.'));
-    console.log('zzz');
     m.setZIndex(10000);
     map.setCenter(m.getPosition());
     map.setZoom(14);
