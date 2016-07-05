@@ -88,8 +88,8 @@ function location_data_to_geoJson (data) {
       'geometry': {
         'type':'Point',
         'coordinates':[
-          row.Latitude,
-          row.Longitude
+          row.Longitude,
+          row.Latitude
         ]
       },
       'properties':row
@@ -109,10 +109,11 @@ var infowindow_compiled = _.template(
 '<div class="ok-event">'+
   '<a href id="close-infowindow" class="pull-right">close x</a>'+
   '<aside class="type-<%- prop.Type.toLowerCase() %>"><%= prop.Title %></aside>' +
-  '<h5><%= prop.Name %></h5>'+
+  '<h5></h5>'+
   '<address><%= prop.Address %></address>'+
   '<div><a target="_blank" href="http://maps.google.com/?q=<%= prop.Address %>">view on google map</a></div>' +
   '<time><%= prop.Days %> <%= prop.Hours %></time>'+
+  '<div class="phone-number"><%= prop.PhoneNumber %></div>'+
   '<section class="event-details"><%= prop.Details %></section>'+
   '<a class="event-website"><%= prop.Website %></a>'+
   '<section class="icons-social">'+
@@ -124,15 +125,25 @@ var infowindow_compiled = _.template(
   '})%>'+
   '</section>'+
 '</div>');
-
+var stdlocation_compiled = _.template(
+  '<div class="col-xs-6 col-sm-3 ok-treatment">'+
+  '<h5><%= prop.Name %></h5>'+
+  '<address><%= prop.Address %></address>'+
+  't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+
+  '<time><%= prop.Days %> <%= prop.Hours %></time>'+
+  '<section class="treatment-details"><strong>Treated:</strong><%= prop.Details %></section><br />'+
+  '<button type="button" class="btn btn-secondary show-marker center-block" data-id="<%= prop.id %>">view on map</button>'+
+  '</div>'
+);
 var infowindowdom = document.getElementById('info-window');
 var markers = [];
 function put_geoJson_on_map(geoJs){
-  var i, coords, lat_lng, marker, fp, icon_url;
+  var i, coords, lat_lng, marker, fp, icon_url, std_html='';
   for (var i = 0; i < geoJs.features.length; i++) {
     fp = geoJs.features[i];
     coords = fp.geometry.coordinates;
     lat_lng = new google.maps.LatLng(coords[1],coords[0]);
+    fp.properties.id = i;
     if(fp.properties.Type.toLowerCase() == POINT_TYPE.CONDOM){
       icon_url = IMAGE_URLS.CONDOM;
       fp.properties.Title = 'Free Condoms';
@@ -142,6 +153,7 @@ function put_geoJson_on_map(geoJs){
     }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.TREATMENT){
       icon_url = IMAGE_URLS.TREATMENT;
       fp.properties.Title = 'STD Treatment Center';
+      std_html += stdlocation_compiled({'prop':fp.properties});
     }else{
       icon_url = IMAGE_URLS.CONDOM;
     }
@@ -164,15 +176,32 @@ function put_geoJson_on_map(geoJs){
     });
     markers.push(marker);
   }
+  document.getElementById('std-treatment-list-section').innerHTML = std_html;
 }
 
 //close window
 function close_info_window() {
-  console.log('close');
   $(infowindowdom).removeClass("active");
 }
-
-function highlight_marker (marker_type) {
+function show_marker_by_id(id){
+  var m;
+  for(var i=markers.length;i--;){
+    m = markers[i];
+    if(m.icon.indexOf('-selected') !== -1){
+      m.setIcon(m.icon.replace('-selected.', '.'));
+    }
+  }
+  m = markers[id];
+  if(typeof m !== 'undefined'){
+    m.setIcon(m.icon.replace('.', '-selected.'));
+    console.log('zzz');
+    m.setZIndex(10000);
+    map.setCenter(m.getPosition());
+    map.setZoom(14);
+  }
+  return m;
+}
+function highlight_markers_by_type (marker_type) {
   var m;
   for(var i=markers.length;i--;){
     m = markers[i];
@@ -221,7 +250,15 @@ $(document).ready(function() {
   });
   $('body').on('click', '.highlight-marker', function(e) {
     e.preventDefault();
-    highlight_marker($(e.target).data('type'));
+    highlight_markers_by_type($(e.target).data('type'));
+    return false;
+  });
+  $('body').on('click', '.show-marker', function(e) {
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $("#map").offset().top
+    }, 1000);
+    show_marker_by_id($(e.target).data('id'));
     return false;
   });
 });
