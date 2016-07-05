@@ -525,7 +525,30 @@ a:hover {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment.png") no-repeat 2px 2px, #e1e1e1; 
 }
-
+[data-type="condom"]:hover {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-condom-selected.png") no-repeat 2px 2px, #eee; 
+}
+[data-type="event"]:hover {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, #eee; 
+}
+[data-type="treament"]:hover {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #eee; 
+}
+[data-type="condom"]:active {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-condom-selected.png") no-repeat 2px 2px, #d4d4d4; 
+}
+[data-type="event"]:active {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, #d4d4d4; 
+}
+[data-type="treament"]:active {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #d4d4d4; 
+}
 
 .container-fluid {
 padding: 60px 50px;
@@ -621,7 +644,7 @@ z-index: 9999;
 border: 0;
 font-size: 12px !important;
 line-height: 1.42857143 !important;
-letter-spacing: 2px;
+letter-spacing: 1px;
 border-radius: 0;
 font-family: Montserrat, sans-serif;
 }
