@@ -510,7 +510,21 @@ a:hover {
         width:100%;
 }
 }
-/* end jumbotron wide layout - OK */
+
+
+/* icons for map buttons - OK */
+[data-type="condom"] {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-condom.png") no-repeat 2px 2px, #e1e1e1; 
+}
+[data-type="event"] {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-event.png") no-repeat 2px 2px, #e1e1e1; 
+}
+[data-type="treament"] {
+    padding:8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-treatment.png") no-repeat 2px 2px, #e1e1e1; 
+}
 
 
 .container-fluid {
@@ -709,6 +723,7 @@ color: #fff !important;
   margin:0 auto;
   margin-bottom: 20px
 }
+
 /* Treatment center info - OK */
 .ok-treatment {
     padding: 20px 20px 10px;
@@ -736,13 +751,6 @@ color: #fff !important;
     margin-top:3px;
     line-height:1.2;
 }
-
-
-
-
-
-
-
 
 
 /* flipper css from https://davidwalsh.name/css-flip */
