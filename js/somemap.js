@@ -121,7 +121,7 @@ var infowindow_compiled = _.template(
   '<time><%= prop.Days %> <%= prop.Hours %></time>'+
   '<div class="phone-number"><%= prop.PhoneNumber %></div>'+
   '<section class="event-details"><%= prop.Details %></section>'+
-  '<a class="event-website"><%= prop.Website %></a>'+
+  '<a target="_blank" href="<%- prop.Website %>" class="event-website"><%= prop.Website %></a>'+
   '<section class="icons-social">'+
   '<% _.forEach(SNS, function(s){'+
   'if(prop[s] !== ""){%>'+
