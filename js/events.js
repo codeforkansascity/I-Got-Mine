@@ -29,7 +29,7 @@ function locations_to_recent_events(locations) {
   //sort
   events.sort(function(a,b) {return new Date(a.Date) > new Date(b.Date)});
   events[0].Active = 'active';
-  console.log(events);
+  // console.log(events);
   return events;
 }
 
