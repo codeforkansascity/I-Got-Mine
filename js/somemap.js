@@ -60,14 +60,20 @@ function initialize() {
   var myCenter;
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      console.log('share success');
       myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      console.log(myCenter);
       showMap(myCenter);
     }, function() {
+      console.log('dont share');
       myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
+      console.log(myCenter);
       showMap(myCenter);
     });
   }else{
+    console.log('no geolocation');
     myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
+    console.log(myCenter);
     showMap(myCenter);
   }
 }
