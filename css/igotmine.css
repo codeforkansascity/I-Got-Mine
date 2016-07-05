@@ -533,7 +533,7 @@ a:hover {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, #eee; 
 }
-[data-type="treament"]:hover {
+[data-type="treatment"]:hover {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #eee; 
 }
@@ -545,7 +545,7 @@ a:hover {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, #d4d4d4; 
 }
-[data-type="treament"]:active {
+[data-type="treatment"]:active {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #d4d4d4; 
 }

@@ -138,7 +138,7 @@ var stdlocation_compiled = _.template(
   't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+
   '<time><%= prop.Days %> <%= prop.Hours %></time>'+
   '<section class="treatment-details"><strong>Treated:</strong><%= prop.Details %></section><br />'+
-  '<button type="button" class="btn btn-secondary show-marker center-block" data-id="<%= prop.id %>">view on map</button>'+
+  '<button type="button" class="btn btn-secondary show-marker center-block" data-type="treatment" data-id="<%= prop.id %>">view on map</button>'+
   '</div>'
 );
 var infowindowdom = document.getElementById('info-window');
