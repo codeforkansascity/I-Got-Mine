@@ -51,12 +51,12 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="section-header">
-        <h2>Free Condoms</h2>
+        <h2>Get Free Condoms</h2>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-secondary highlight-marker" data-type="condom">Condom</button>
-        <button type="button" class="btn btn-secondary highlight-marker" data-type="event">Event</button>
-        <button type="button" class="btn btn-secondary highlight-marker" data-type="treament">Treament</button>
+        <button type="button" class="btn btn-secondary highlight-marker" data-type="condom">Condoms</button>
+        <button type="button" class="btn btn-secondary highlight-marker" data-type="event">Events</button>
+        <button type="button" class="btn btn-secondary highlight-marker" data-type="treament">STD Treament</button>
       </div>
       <div class="map-frame">
         <div id="googleMap" class="googleMap"></div>
@@ -68,10 +68,10 @@
 
 <div class="container-fluid bg-grey" id="events">
   <div class="row">
-    <div class="section-header">
-      <h2>Upcoming Events</h2>
-    </div>
     <div class="col-sm-12">
+      <div class="section-header">
+        <h2>Upcoming Events</h2>
+      </div>       
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -117,7 +117,71 @@
 <div class="container-fluid bg-grey" id="stdinfo">
   <div class="row">
     <div class="col-sm-12">
-      <h2>STD Treatment</h2>
+      <h2>STD Treatment Centers</h2>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 ok-treatment">
+        <h5>KC Care Clinic - Midtown</h5>
+        <address>3515 Broadway, Kansas City, MO 64111 </address>
+        t: <a href="tel:+18167535144">(816) 753-5144</a><br />
+        <time>Mon-Sat 8AM-5PM</time>
+        <section class="treatment-details"><strong>Treated:</strong> HIV/AIDS, syphylis, ...</section><br />
+        <button type="button" onClick = "location.href='#map'" class="btn btn-secondary highlight-marker center-block" data-type="treament">view on map</button>
+            </div>
+            <div class="col-xs-6 col-sm-3 ok-treatment">
+        <h5>KC Care Clinic – Prospect </h5>
+        <address>2340 E. Meyer Boulevard (Building 1), Kansas City, MO 64132 </address>
+        t: <a href="tel:+18167535144">(816) 753-5144</a><br />
+        <time>Mon-Sat 8AM-5PM</time>
+        <section class="treatment-details"><strong>Treated:</strong> HIV/AIDS, syphylis, ...</section><br />
+        <button type="button" onClick = "location.href='#map'" class="btn btn-secondary highlight-marker center-block" data-type="treament">view on map</button>
+            </div>              
+            <div class="col-xs-6 col-sm-3 ok-treatment">
+        <h5>Good Samaritan Project </h5>
+        <address>3030 Walnut St, Kansas City, MO 64108 </address>
+        t: <a href="tel:+18165618784">(816) 561-8784</a><br />
+        <time>Mon-Fri 8:30AM-5PM</time>
+        <section class="treatment-details"><strong>Treated:</strong> HIV/AIDS, syphylis, ...</section><br />
+        <button type="button" onClick = "location.href='#map'" class="btn btn-secondary highlight-marker center-block" data-type="treament">view on map</button>
+            </div>   
+            <div class="col-xs-6 col-sm-3 ok-treatment">
+        <h5>City of Kansas City, MO Health Department</h5>
+        <address>2400 Troost Ave., Kansas City, MO 64108 </address>
+        t: <a href="tel:+18165136008">(816) 513-6008</a><br />
+        <time>Mon-Fri 8AM-5PM</time>
+        <section class="treatment-details"><strong>Treated:</strong> HIV/AIDS, syphylis, ...</section><br />
+        <button type="button" onClick = "location.href='#map'" class="btn btn-secondary highlight-marker center-block" data-type="treament">view on map</button>
+            </div>  
+        </div>
+
+                <div class="row">
+            <div class="col-xs-6 col-sm-3 ok-treatment">
+        <h5>Truman Medical Center - Hospital Hill</h5>
+        <address>2301 Holmes Kansas City, MO 64108</address>
+        t: <a href="tel:+18164041885">(816) 404-1885</a><br />
+        <time>Mon-Fri 8AM-4:30PM</time>
+        <section class="treatment-details"><strong>Treated:</strong> HIV/AIDS, syphylis, ...</section><br />
+        <button type="button" onClick = "location.href='#map'" class="btn btn-secondary highlight-marker center-block" data-type="treament">view on map</button>
+            </div>
+            <div class="col-xs-6 col-sm-3 ok-treatment">
+        <h5>Truman Medical Center - Lakewood</h5>
+        <address>7900 Lee's Summit Road, Kansas City, MO 64139 </address>
+        t: <a href="tel:+18164047000 ">(816) 404-7000 </a><br />
+        <time>Mon-Fri 8AM-4:30PM</time>
+        <section class="treatment-details"><strong>Treated:</strong> HIV/AIDS, syphylis, ...</section><br />
+        <button type="button" onClick = "location.href='#map'" class="btn btn-secondary highlight-marker center-block" data-type="treament">view on map</button>
+            </div>              
+            <div class="col-xs-6 col-sm-3">
+ 
+            </div>   
+            <div class="col-xs-6 col-sm-3">
+ 
+            </div>  
+        </div>
+        
+        
+        
+        
+        
       <!-- flipper card-->
       <div id="std-card-1" class="flip-container std-card">
         <div class="flipper">
@@ -239,7 +303,7 @@
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
   <p>I Got Mine in KC - By the City of Kansas City, MO Health Department.</p>
-  <a href="http://codeforkc.com" title="Website developed by Code for KC brigade" class="code-for-kc-logo pull-right">  </a>
+  <a href="http://codeforkc.org" title="Website developed by Code for KC brigade" class="code-for-kc-logo pull-right">  </a>
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

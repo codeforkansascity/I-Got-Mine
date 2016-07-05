@@ -12,7 +12,7 @@
         margin:0;
         padding:0;   
         }
-        h2, h3, h4 {
+        h2, h3, h4, h5 {
         font-family: Quicksand, Montserrat, sans-serif;
         }
 		h2 {
@@ -709,6 +709,41 @@ color: #fff !important;
   margin:0 auto;
   margin-bottom: 20px
 }
+/* Treatment center info - OK */
+.ok-treatment {
+    padding: 20px 20px 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    background: #fff;
+    border: solid #ccc 1px; 
+    border-radius: 6px;
+}
+.ok-treatment h5 {
+    font-size: 16px;
+    font-weight: 700; 
+    margin-top: 0;
+    color:#ff6c2f;
+}
+.ok-treatment address {
+    margin-bottom: 0;
+}
+.ok-treatment time {
+    margin-top:0; 
+    letter-spacing: 1px;
+    color:#ff6c2f;
+}
+.ok-treatment .treatment-details {
+    margin-top:3px;
+    line-height:1.2;
+}
+
+
+
+
+
+
+
+
 
 /* flipper css from https://davidwalsh.name/css-flip */
 /* entire container, keeps perspective */
