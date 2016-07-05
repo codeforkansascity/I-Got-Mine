@@ -521,7 +521,7 @@ a:hover {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-event.png") no-repeat 2px 2px, #e1e1e1; 
 }
-[data-type="treament"] {
+[data-type="treatment"] {
     padding:8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment.png") no-repeat 2px 2px, #e1e1e1; 
 }
