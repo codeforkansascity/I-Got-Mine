@@ -859,6 +859,17 @@ color: #fff !important;
   background-color: white;
   padding: 20px;
 }
+.std-card .img-circle {
+    width: 300px;
+    height: 300px;
+}
+#std-card-1 .img-circle {
+   background: url("../images/std01-herpes.jpg") no-repeat, #FFF; 
+}
+
+
+
+
 
 #about {
     background: #3e495a;
