@@ -9,7 +9,7 @@
         font-size: 36px; 
         font-weight: 700;
         line-height: 1.2;
-        margin:0;
+        margin: 20px 0 0 0;
         padding:0;   
         }
         h2, h3, h4, h5 {
@@ -35,7 +35,7 @@
 /* jumbotron (top of the screen) styles - OK */
 .jumbotron {
     color: #fff;
-    padding: 65px 5% 1px;  
+    padding: 45px 5% 1px;  
     margin-bottom: 10px;
     background-color: transparent;
 }
@@ -90,18 +90,18 @@
 
 @media screen and (min-width: 768px)  {
     body {
-        background: url(../images/igmikc-bkg-couple.png) no-repeat fixed 95% 80px, #FF6C2F url("../images/igmikc-bkg-condom-strip.png") repeat-x scroll 0 290px;
-    }
+        background: url(../images/igmikc-bkg-couple.png) no-repeat scroll 95% 80px, #FF6C2F url("../images/igmikc-bkg-condom-strip.png") repeat-x scroll 0 290px;
+    } 
     h2 {
 		font-size: 24px;
 		}
     .jumbotron {
-    padding: 100px 5% 1px;   
+    padding: 60px 5% 1px;   
     margin-bottom: 20px;
     }
     .jumbotron h1 {
         font-size: 60px; 
-        padding: 5px 0 15px 100px;
+        padding: 25px 0 15px 100px;
         background: url(../images/igmikc-condom-package-large.png) no-repeat 0 0;
     }
     .jumbotron ul {
