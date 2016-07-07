@@ -103,7 +103,7 @@
 		font-size: 40px;
 		}
     .jumbotron {
-    padding: 40px 5% 1px;   
+    padding: 60px 5% 1px;   
     margin-bottom: 20px;
     }
     .jumbotron h1 {
@@ -510,7 +510,7 @@ footer {
     color: #666;
 }
 footer.container-fluid {
-    padding: 60px 20px 20px;
+    padding: 50px 20px 20px 50px;
 }
 footer .glyphicon {
     font-size: 20px;
@@ -519,6 +519,9 @@ footer .glyphicon {
 }
 footer .glyphicon:hover {
     color: #fff;
+}
+footer p {
+    font-size: 13px;
 }
 footer .code-for-kc-logo {
     display: inline-block;
