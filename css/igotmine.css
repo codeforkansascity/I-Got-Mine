@@ -446,18 +446,14 @@ p.ok-section-details {
 .std-card, .std-card .front, .std-card .back{
   width: 320px;
   height: 500px;
+  border-radius: 6px;
 }
 .std-card{
   position: relative;
 }
-/* images are in background to speedup load - OK
-.std-card img{
-  margin: 0 auto;
-}
-*/
 .flip-button{
   position: absolute;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
@@ -465,21 +461,36 @@ p.ok-section-details {
 .flip-button button{
   width: 200px;
   margin: 0 auto;
-  background-color: #ffa23c;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;  
+  background-color: #ff9366;
   color: white;
 }
-
-/* OK edits to card content layout */
-.std-card .back {
-  background-color: white;
-  padding: 20px;
+.std-card .front {
+  background-color: #f6edde;
+  background-color: #e6e9ed;
 }
-.std-card h3 {
-    color:#
+.std-card .front h3 {
+  margin-top: 70px;
+  padding: 7px;
+  text-align: center;
+  color: #fff;
+  background: #FF6C2F;
+}
+.std-card-front-info {
+    padding: 0 20px;
+}
+.std-card .back {
+  background-color: #fff;
+  padding: 20px;
 }
 .std-card .img-circle {
     width: 250px;
     height: 250px;
+}
+.std-card .back p {
+    font-size: 14px;
+    line-height: 1.4;
 }
 #std-card-1 .img-circle {
    background: url("../images/std01-herpes.jpg") no-repeat, #FFF; 
