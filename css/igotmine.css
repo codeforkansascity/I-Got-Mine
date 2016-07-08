@@ -358,7 +358,9 @@ color: #fff !important;
   margin:0 auto;
   margin-bottom: 20px
 }
-
+p.ok-section-details {
+    padding-top: 30px;
+}
 /* Treatment center info - OK */
 .ok-treatment {
     padding: 20px 20px 10px;
@@ -515,7 +517,7 @@ footer.container-fluid {
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #fff;
+    color: #ff753c;
 }
 footer .glyphicon:hover {
     color: #fff;
