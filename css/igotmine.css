@@ -466,8 +466,10 @@ p.ok-section-details {
   background-color: #ff9366;
   color: white;
 }
+.flip-button button:hover, .flip-button button:active {
+  background-color: #FF6C2F;
+}
 .std-card .front {
-  background-color: #f6edde;
   background-color: #e6e9ed;
 }
 .std-card .front h3 {
