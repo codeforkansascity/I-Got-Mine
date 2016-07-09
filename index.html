@@ -27,11 +27,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#map">Free Condoms</a></li>
-        <li><a href="#events">Upcoming Events</a></li>
-        <li><a href="#stdtreatment">STD Treatment</a></li>
-        <li><a href="#stdinfo">STD Symptoms</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a class="l10n" data-lkey="FreeCondom" href="#map">Free Condoms</a></li>
+        <li><a class="l10n" data-lkey="UpcomingEvents" href="#events">Upcoming Events</a></li>
+        <li><a class="l10n" data-lkey="STDTreatment" href="#stdtreatment">STD Treatment</a></li>
+        <li><a class="l10n" data-lkey="STDSymptoms" href="#stdinfo">STD Symptoms</a></li>
+        <li><a class="l10n" data-lkey="About" href="#about">About</a></li>
       </ul>
     </div>
   </div>
@@ -40,19 +40,19 @@
 <div class="jumbotron">
     <div class="btn-group pull-right" data-toggle="buttons">
         <label class="btn btn-secondary-outline active">
-            <input type="radio" name="language" id="english" autocomplete="off" checked> English
+            <input type="radio" name="language" id="english" class="language-btn" autocomplete="off" data-language="english" checked> English
         </label>
         <label class="btn btn-secondary-outline">
-            <input type="radio" name="language" id="spanish" autocomplete="off"> Español
+            <input type="radio" name="language" id="spanish" class="language-btn"autocomplete="off" data-language="spanish"> Español
         </label>
     </div>
-  <h1>I Got Mine <span class="ok-highlight">in KC</span></h1>
+  <h1><span class="l10n" data-lkey="IGotMine">I Got Mine</span> <span class="ok-highlight l10n" data-lkey="InKC">in KC</span></h1>
       <ul class="jumbotron">
-        <li>Get yours!</li>
-        <li><a href="#map">Free Condoms</a></li>
-        <li><a href="#events">Upcoming Events</a></li>
-        <li><a href="#stdtreatment">STD Treatment</a></li>
-        <li><a href="#about">By Health Department of Kansas City, MO</a></li>
+        <li class="l10n" data-lkey="GetYours">Get yours!</li>
+        <li><a href="#map" class="l10n" data-lkey="FreeCondoms">Free Condoms</a></li>
+        <li><a href="#events" class="l10n" data-lkey="UpcomingEvents">Upcoming Events</a></li>
+        <li><a href="#stdtreatment" class="l10n" data-lkey="STDTreatment">STD Treatment</a></li>
+        <li><a href="#about" class="l10n" data-lkey="ByTheKansasCityMOHealthDepartment">By Health Department of Kansas City, MO</a></li>
       </ul>
 </div>
 
@@ -60,13 +60,13 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="section-header">
-        <h2>Free Condoms</h2>
-        <h3>Get free condoms at distribution sites throughout Kansas City, at events and at STD treatment centers.</h3>
+        <h2 class="l10n" data-lkey="FreeCondoms">Free Condoms</h2>
+        <h3 class="l10n" data-lkey="FreeCondomsCaption">Get free condoms at distribution sites throughout Kansas City, at events and at STD treatment centers.</h3>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-secondary highlight-marker" data-type="condom">Condoms</button>
-        <button type="button" class="btn btn-secondary highlight-marker" data-type="event">Events</button>
-        <button type="button" class="btn btn-secondary highlight-marker" data-type="treatment">STD Treatment</button>
+        <button type="button" class="btn btn-secondary highlight-marker l10n" data-type="condom" data-lkey="Condoms">Condoms</button>
+        <button type="button" class="btn btn-secondary highlight-marker l10n" data-type="event" data-lkey="Events">Events</button>
+        <button type="button" class="btn btn-secondary highlight-marker l10n" data-type="treatment" data-lkey="STDTreament">STD Treatment</button>
       </div>
       <div class="map-frame">
         <div id="googleMap" class="googleMap"></div>
@@ -80,8 +80,8 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="section-header">
-        <h2>Upcoming Events</h2>
-        <h3>Get hooked up before you hook up.  Attend a community event near you. Receive free condoms, get free STD testing, or learn more about STDs.</h3>
+        <h2 class="l10n" data-lkey="UpcomingEvents">Upcoming Events</h2>
+        <h3 class="l10n" data-lkey="UpcomingEventsCaption">Get hooked up before you hook up.  Attend a community event near you. Receive free condoms, get free STD testing, or learn more about STDs.</h3>
       </div>       
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -96,11 +96,11 @@
         <!-- Left and right controls -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <span class="sr-only l10n" data-lkey="Previous">Previous</span>
         </a>
         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <span class="sr-only l10n" data-lkey="Next">Next</span>
         </a>
       </div>
     </div>
@@ -110,11 +110,11 @@
 <div class="container-fluid bg-grey" id="stdtreatment">
   <div class="row">
     <div class="col-sm-12">
-      <h2>STD Treatment Centers</h2>
-        <h3>Medical centers where STD testing and treatment is available.</h3>        
+      <h2 class="l10n" data-lkey="STDTreamentCenters">STD Treatment Centers</h2>
+        <h3 class="l10n" data-lkey="STDTreatmentCentersCaption">Medical centers where STD testing and treatment is available.</h3>        
         <div id="std-treatment-list-section" class="row">
         </div> 
-        <p class="ok-section-details">Get your STD test results in 10 days or less. Some results are available right away.</p>
+        <p class="ok-section-details l10n" data-lkey="STDTestResult">Get your STD test results in 10 days or less. Some results are available right away.</p>
       </div>
     </div>
 </div>
@@ -122,8 +122,8 @@
 <div class="container-fluid bg-grey" id="stdinfo">
   <div class="row">
     <div class="col-sm-12">
-      <h2>STD Symptoms</h2>
-      <h3>Symptoms of common sexually transmitted deseases</h3>
+      <h2 class="l10n" data-lkey="STDSymptoms">STD Symptoms</h2>
+      <h3 class="l10n" data-lkey="STDSymptomsCaption">Symptoms of common sexually transmitted deseases</h3>
       <div id="std-card-list-section" class="row">  
       </div>
     </div>
@@ -133,8 +133,8 @@
 <div class="container-fluid bg-grey" id="about">
   <div class="row">
     <div class="col-sm-8 about-description">
-      <h2>About</h2>
-      <p>The purpose of the I Got Mine in KC project is to get residents hooked up before they hook up. There has been an increase of sexually transmitted diseases in the Kansas City Metro area. With the help of Code for America, the Kansas City, MO Health Department developed the I Got Mine in KC project in 2016.  I got mine in KC means I got mine, you should get yours too. This means you should get your free condoms, STD test, and accurate sexual health information. By receiving these free health resources offered by the Kansas City, MO Health Department and its partners, residents of Kansas City can get empowered, healthy, and be pro-active.</p>
+      <h2 class="l10n" data-lkey="About">About</h2>
+      <p class="l10n" data-lkey="AboutContent">The purpose of the I Got Mine in KC project is to get residents hooked up before they hook up. There has been an increase of sexually transmitted diseases in the Kansas City Metro area. With the help of Code for America, the Kansas City, MO Health Department developed the I Got Mine in KC project in 2016.  I got mine in KC means I got mine, you should get yours too. This means you should get your free condoms, STD test, and accurate sexual health information. By receiving these free health resources offered by the Kansas City, MO Health Department and its partners, residents of Kansas City can get empowered, healthy, and be pro-active.</p>
     </div>
     <div class="col-sm-4 about-logos">
       <img src="images/logo-care-and-prevention.png" alt="Care and Prevention. HIV Programs." class="img-responsive center-block"></img><br />
@@ -151,8 +151,8 @@
   </a>
   <div class="row">
     <div class="col-sm-8 text-left">
-    <p>The contents of the I Got Mine in KC website, such as text, graphics, images, and other material are for informational purposes only. This I Got Mine in KC website contains sexually explicit health-related material that may be offensive.  If so, you may not want to visit this site.  The content contained on the I Got Mine in KC site is not intended to substitute professional medical advice or diagnosis.  Get advice from your doctor or healthcare provider as it regards your medical condition.</p>
-    <p>I Got Mine in KC - By the City of Kansas City, MO Health Department.</p>
+    <p class="l10n" data-lkey="Disclaimer">The contents of the I Got Mine in KC website, such as text, graphics, images, and other material are for informational purposes only. This I Got Mine in KC website contains sexually explicit health-related material that may be offensive.  If so, you may not want to visit this site.  The content contained on the I Got Mine in KC site is not intended to substitute professional medical advice or diagnosis.  Get advice from your doctor or healthcare provider as it regards your medical condition.</p>
+    <p><span class="l10n" data-lkey="IGotMine"></span>I Got Mine <span class="l10n" data-lkey="InKC"></span>in KC - <span class="l10n" data-lkey="ByTheKansasCityMOHealthDepartment"></span>By the City of Kansas City, MO Health Department.</p>
     </div>
  </div>
   <a href="http://codeforkc.org" title="Website developed by Code for KC brigade" class="code-for-kc-logo pull-right">  </a>
@@ -203,6 +203,7 @@ $(document).ready(function(){
 <script src="js/events.js"></script>
 <!-- <script src="js/flipper.js"></script> -->
 <script src="js/std-card.js"></script>
+<script src="js/l10n.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
     </script>
@@ -222,6 +223,24 @@ $(document).ready(function(){
   $('.nav a').on('click', function(){
     $('.navbar-toggle').click() //bootstrap 3.x by Richard
   });
+  //load google sheet data
+  Tabletop.init( { key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
+    callback: function(data, tabletop) {
+      //locations
+      var locations = data.Locations.elements;
+      var geoJs = location_data_to_geoJson(locations);
+      put_geoJson_on_map(geoJs);
+      //events
+      var locations = data.Locations.elements;
+      events = locations_to_recent_events(locations);
+      event_carousel_init(events);
+      //std cards
+      var stds = data.Stdtesting.elements;
+      init_std_cards(stds);
+      //localization
+      init_l10n(data.Localization.elements);
+    },
+    simpleSheet: false } );
 </script>
 </body>
 </html>

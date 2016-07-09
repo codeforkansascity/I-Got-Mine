@@ -50,12 +50,3 @@ function event_carousel_init(events) {
   }
   document.getElementById('event-carousel-inner').innerHTML = carousel_inner_html;
 }
-
-Tabletop.init( { key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
-  callback: function(data, tabletop) {
-    var locations = data.Locations.elements;
-    events = locations_to_recent_events(locations);
-    event_carousel_init(events);
-  },
-  simpleSheet: false } );
-

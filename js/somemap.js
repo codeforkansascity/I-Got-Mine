@@ -36,18 +36,6 @@ function showMap (center) {
   // script.src = '/maps/documentation/javascript/tutorials/js/earthquake_GeoJSONP.js';
   document.getElementsByTagName('head')[0].appendChild(script);
 
-  //google sheet data
-  Tabletop.init( { key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
-                  callback: function(data, tabletop) {
-                    // console.log(data);
-                    var locations = data.Locations.elements;
-                    var geoJs = location_data_to_geoJson(locations);
-                    // console.log(geoJs);
-                    put_geoJson_on_map(geoJs);
-
-                  },
-                  simpleSheet: false } );
-
   //add current location as center if the user is on mobile phone
   if(mobileAndTabletcheck()){
     var myMarker = new google.maps.Marker({
