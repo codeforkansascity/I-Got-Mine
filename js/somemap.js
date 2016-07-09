@@ -36,18 +36,6 @@ function showMap (center) {
   // script.src = '/maps/documentation/javascript/tutorials/js/earthquake_GeoJSONP.js';
   document.getElementsByTagName('head')[0].appendChild(script);
 
-  //google sheet data
-  Tabletop.init( { key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
-                  callback: function(data, tabletop) {
-                    // console.log(data);
-                    var locations = data.Locations.elements;
-                    var geoJs = location_data_to_geoJson(locations);
-                    // console.log(geoJs);
-                    put_geoJson_on_map(geoJs);
-
-                  },
-                  simpleSheet: false } );
-
   //add current location as center if the user is on mobile phone
   if(mobileAndTabletcheck()){
     var myMarker = new google.maps.Marker({
@@ -57,24 +45,14 @@ function showMap (center) {
   }
 }
 function initialize() {
-  var myCenter;
+  //the timeout of geolocation.getCurrentPosition doesn't work in some browsers
+  //show the map first, re-center if we can get user location
+  var myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
+  showMap(myCenter);
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log('share success');
-      myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      console.log(myCenter);
-      showMap(myCenter);
-    }, function() {
-      console.log('dont share');
-      myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
-      console.log(myCenter);
-      showMap(myCenter);
+      map.setCenter({lat:position.coords.latitude,lng:position.coords.longitude});
     });
-  }else{
-    console.log('no geolocation');
-    myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
-    console.log(myCenter);
-    showMap(myCenter);
   }
 }
 
@@ -132,7 +110,7 @@ var infowindow_compiled = _.template(
   '</section>'+
 '</div>');
 var stdlocation_compiled = _.template(
-  '<div class="col-xs-6 col-sm-3 ok-treatment">'+
+  '<div class="col-xs-6 col-md-4 ok-treatment">'+
   '<h5><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
   't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+
@@ -199,6 +177,7 @@ function show_marker_by_id(id){
   }
   m = markers[id];
   if(typeof m !== 'undefined'){
+    console.log(m.getPosition());
     m.setIcon(m.icon.replace('.', '-selected.'));
     m.setZIndex(10000);
     map.setCenter(m.getPosition());
@@ -212,10 +191,12 @@ function highlight_markers_by_type (marker_type) {
     m = markers[i];
     if(m.icon.indexOf('-selected') !== -1){
       m.setIcon(m.icon.replace('-selected.', '.'));
+      m.setZIndex(100);
     }
     if(m.prop.Type.toLowerCase() === marker_type.toLowerCase() &&
       m.icon.indexOf('-selected') === -1){
       m.setIcon(m.icon.replace('.', '-selected.'));
+      m.setZIndex(9999);
     }
   }
 }

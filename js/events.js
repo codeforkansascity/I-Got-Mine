@@ -11,7 +11,8 @@ var EVENT_CAROUSEL_TEMPLATE_COMPILED = _.template(
   '</div>'+
 '</div>'
 )
-var DEFAULT_EVENT_IMAGE = 'http://i.imgur.com/dtHaKF6.jpg';
+var DEFAULT_EVENT_IMAGES = ['http://i.imgur.com/dtHaKF6.jpg','http://i.imgur.com/Szs6sUL.jpg'];
+var DEFAULT_EVENT_IMAGE = DEFAULT_EVENT_IMAGES[0];
 function locations_to_recent_events(locations) {
   // console.log(locations);
   var events = [], 
@@ -21,7 +22,7 @@ function locations_to_recent_events(locations) {
     // console.log(locations[i].Type.toLowerCase());    
     if(locations[i].Type.toLowerCase() == 'event' && new Date(locations[i].Date) < thres_date){
       if(locations[i].EventImage == ''){
-        locations[i].EventImage = DEFAULT_EVENT_IMAGE;
+        locations[i].EventImage = DEFAULT_EVENT_IMAGES[i % DEFAULT_EVENT_IMAGES.length];
       }
       events.push(locations[i]);
     }
@@ -37,17 +38,15 @@ function event_carousel_init(events) {
   var carousel_inner_html = '';
   if(events.length > 0){
     for(var i=events.length;i--;){
-      carousel_inner_html += EVENT_CAROUSEL_TEMPLATE_COMPILED({event:events[i]});
+      carousel_inner_html += EVENT_CAROUSEL_TEMPLATE_COMPILED({'event':events[i]});
     }
-    document.getElementById('event-carousel-inner').innerHTML = carousel_inner_html;
+  }else{
+    var no_event={
+      Name:"No Upcoming Event",
+      Active: "active",
+      EventImage:DEFAULT_EVENT_IMAGE
+    };
+    carousel_inner_html = EVENT_CAROUSEL_TEMPLATE_COMPILED({'event':no_event});
   }
+  document.getElementById('event-carousel-inner').innerHTML = carousel_inner_html;
 }
-
-Tabletop.init( { key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
-  callback: function(data, tabletop) {
-    var locations = data.Locations.elements;
-    events = locations_to_recent_events(locations);
-    event_carousel_init(events);
-  },
-  simpleSheet: false } );
-
