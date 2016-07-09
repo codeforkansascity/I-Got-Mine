@@ -362,7 +362,7 @@ footer .glyphicon {
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
-    };
+    }
 }
 
 @-webkit-keyframes slide {
@@ -374,7 +374,7 @@ footer .glyphicon {
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
-    };
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -386,13 +386,13 @@ footer .glyphicon {
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;
-    };
+    }
 }
 
 @media screen and (max-width: 480px) {
     .logo {
         font-size: 150px;
-    };
+    }
 }
 
 .map_container {
