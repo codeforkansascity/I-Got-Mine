@@ -344,7 +344,9 @@ color: #fff !important;
     height: 70%;
     margin: auto;
     }
-
+.carousel-caption{
+  background: linear-gradient(rgba(1,1,1,0.1),rgba(1,1,1,0.3));
+}
 /* event carousel */
 .event-carousel-inner .item img{
   height:400px;
