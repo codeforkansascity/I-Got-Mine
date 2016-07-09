@@ -59,7 +59,7 @@ function showMap (center) {
 function initialize() {
   //the timeout of geolocation.getCurrentPosition doesn't work in some browsers
   //show the map first, re-center if we can get user location
-  var myCenter; = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
+  var myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
   showMap(myCenter);
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
