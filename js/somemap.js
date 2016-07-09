@@ -203,10 +203,12 @@ function highlight_markers_by_type (marker_type) {
     m = markers[i];
     if(m.icon.indexOf('-selected') !== -1){
       m.setIcon(m.icon.replace('-selected.', '.'));
+      m.setZIndex(100);
     }
     if(m.prop.Type.toLowerCase() === marker_type.toLowerCase() &&
       m.icon.indexOf('-selected') === -1){
       m.setIcon(m.icon.replace('.', '-selected.'));
+      m.setZIndex(9999);
     }
   }
 }
