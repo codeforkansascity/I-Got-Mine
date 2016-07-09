@@ -523,7 +523,7 @@ p.ok-section-details {
 /* front pane, placed above back */
 
 .front {
-    z-index: 2;
+    /*z-index: 2;*/
     /* for firefox 31 */
     transform: rotateY(0deg);
 }
