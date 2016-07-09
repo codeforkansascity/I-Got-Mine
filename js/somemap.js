@@ -122,7 +122,7 @@ var infowindow_compiled = _.template(
   '</section>'+
 '</div>');
 var stdlocation_compiled = _.template(
-  '<div class="col-xs-6 col-sm-3 ok-treatment">'+
+  '<div class="col-xs-6 col-md-4 ok-treatment">'+
   '<h5><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
   't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+
