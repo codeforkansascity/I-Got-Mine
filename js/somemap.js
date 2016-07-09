@@ -57,24 +57,14 @@ function showMap (center) {
   }
 }
 function initialize() {
-  var myCenter;
+  //the timeout of geolocation.getCurrentPosition doesn't work in some browsers
+  //show the map first, re-center if we can get user location
+  var myCenter; = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
+  showMap(myCenter);
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      console.log('share success');
-      myCenter = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-      console.log(myCenter);
-      showMap(myCenter);
-    }, function() {
-      console.log('dont share');
-      myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
-      console.log(myCenter);
-      showMap(myCenter);
+      map.setCenter({lat:position.coords.latitude,lng:position.coords.longitude});
     });
-  }else{
-    console.log('no geolocation');
-    myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
-    console.log(myCenter);
-    showMap(myCenter);
   }
 }
 
@@ -199,6 +189,7 @@ function show_marker_by_id(id){
   }
   m = markers[id];
   if(typeof m !== 'undefined'){
+    console.log(m.getPosition());
     m.setIcon(m.icon.replace('.', '-selected.'));
     m.setZIndex(10000);
     map.setCenter(m.getPosition());
