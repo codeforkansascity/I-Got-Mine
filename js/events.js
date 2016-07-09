@@ -11,8 +11,8 @@ var EVENT_CAROUSEL_TEMPLATE_COMPILED = _.template(
   '</div>'+
 '</div>'
 )
-var DEFAULT_EVENT_IMAGE = 'http://i.imgur.com/dtHaKF6.jpg';
 var DEFAULT_EVENT_IMAGES = ['http://i.imgur.com/dtHaKF6.jpg','http://i.imgur.com/Szs6sUL.jpg'];
+var DEFAULT_EVENT_IMAGE = DEFAULT_EVENT_IMAGES[0];
 function locations_to_recent_events(locations) {
   // console.log(locations);
   var events = [], 

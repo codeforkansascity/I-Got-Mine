@@ -605,18 +605,6 @@ p.ok-section-details {
     line-height: 1.4;
 }
 
-#std-card-1 .img-circle {
-    background: url("../images/std-herpes.jpg") no-repeat, #FFF;
-}
-
-#std-card-2 .img-circle {
-    background: url("../images/std-syphilis.jpg") no-repeat, #FFF;
-}
-
-#std-card-3 .img-circle {
-    background: url("../images/std-hepatitis.jpg") no-repeat, #FFF;
-}
-
 #about {
     background: #3e495a;
 }

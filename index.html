@@ -91,24 +91,6 @@
       </ol>
       <!-- Wrapper for slides -->
       <div id="event-carousel-inner" class="carousel-inner event-carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="img-responsive img-rounded" src="http://i.imgur.com/dtHaKF6.jpg" alt="Event 1" height="200px">
-          <div class="carousel-caption">
-            <h3>Event 1</h3>
-            <p>July 1st, 2016 at 8:00 P.M.</p>
-            <p>Quick info on event 1.</p>
-          </div>
-        </div>
-
-        <div class="item">
-          <img class="img-responsive img-rounded" src="http://i.imgur.com/Szs6sUL.jpg" alt="Event 2" height="200px">
-          <div class="carousel-caption">
-            <h3>Event 2</h3>
-            <p>August 1st, 2016 at 8:00 P.M.</p>
-            <p>Quick info on event 1.</p>
-          </div>
-        </div>
-
       </div>
 
         <!-- Left and right controls -->
@@ -141,89 +123,11 @@
   <div class="row">
     <div class="col-sm-12">
       <h2>STD Symptoms</h2>
-        <h3>Symptoms of common sexually transmitted deseases</h3>
-        <div class="row">  
-            
-      <!-- flipper cards -->
-      <div id="std-card-1" class="flip-container std-card">
-        <div class="flipper">
-          <div class="front">
-            <h3>Herpes</h3>
-              <section class="std-card-front-info">
-            <p>Spread during vaginal, anal, or oral sex, and sometimes by heavy petting with someone who has herpes.</p>
-            <a href="http://www.cdc.gov/std/herpes/default.htm">STD description at CDC website >>></a>
-            <p class="std-card-front-info-treat"><strong>Testing</strong> is available at KC Care Clinics and at Kansas City, MO Health Department</p>
-            <p class="std-card-front-info-treat"><strong>Treatment</strong> is available at KC Care Clinics and at Kansas City, MO Health Department</p>
-            </section>
-              
-          </div>
-          <div class="back">
-              <div class="img-responsive img-circle center-block"> 
-              </div>
-            <h3>Herpes</h3>
-            <p>Symptoms show up 1-30 days or longer after having sex.  Most people have no symptoms.  Flu-like symptoms.  Small, painful blisters on the sex organs or mouth.  Itching or burning before the blister appears.  Blisters last 1-3 weeks.  Blisters go away, but you still have Herpes.  Blisters can come back. </p>
-          </div>
-        </div>
-        <div class="flip-button">
-          <button onclick="document.querySelector('#std-card-1').classList.toggle('hover');" class="btn">more info</button>
-        </div>
+      <h3>Symptoms of common sexually transmitted deseases</h3>
+      <div id="std-card-list-section" class="row">  
       </div>
-            
-            
-      <div id="std-card-2" class="flip-container std-card">
-        <div class="flipper">
-          <div class="front">
-            <h3>Syphilis</h3>
-              <section class="std-card-front-info">
-            <p>Spread during vaginal, anal, or oral sex, and sometimes by genital touching with someone who has syphilis.</p>
-            <a href="http://www.cdc.gov/std/syphilis/default.htm">STD description at CDC website >>></a>
-            <p class="std-card-front-info-treat"><strong>Testing</strong> is available at KC Care Clinics and at Kansas City, MO Health Department</p>
-            <p class="std-card-front-info-treat"><strong>Treatment</strong> is available at Truman Medical Center, KC Care Clinics and at Kansas City, MO Health Department</p>
-            </section>
-              
-          </div>
-          <div class="back">
-              <div class="img-responsive img-circle center-block"> 
-              </div>
-            <h3>Syphilis</h3>
-            <p>1st stage: symptoms show up 1-12 weeks after having sex.  a painless sore on the mouth or sex organs lasts 2-6 weeks.  The sore goes away, but you still have syphilis. 2nd stage:  symptoms showup as the sore heals or after.  A rash anywher on the body.  Flu-like feelings.  Rash and flu-like feelings go away, but you still have syphilis. </p>
-          </div>
-        </div>
-        <div class="flip-button">
-          <button onclick="document.querySelector('#std-card-1').classList.toggle('hover');" class="btn">more info</button>
-        </div>
-      </div>
-            
-      <div id="std-card-3" class="flip-container std-card">
-        <div class="flipper">
-          <div class="front">
-            <h3>Hepatitis B</h3>
-              <section class="std-card-front-info">
-            <p>Spread during vaginal, anal, or oral sex with someone who has Hepatitis B.  Spread by contact with infected blood (for example, sharing needles to inject drugs).  Can be passed from mother to baby at birth. </p>
-            <a href="http://www.cdc.gov/hepatitis/hbv/index.htm">STD description at CDC website >>></a>    
-            <p class="std-card-front-info-treat"><strong>Testing</strong> </p>
-            <p class="std-card-front-info-treat"><strong>Treatment</strong> </p>
-            </section>
-              
-          </div>
-          <div class="back">
-              <div class="img-responsive img-circle center-block"> 
-              </div>
-            <h3>Hepatitis B</h3>
-            <p>Symptoms show up 1-9 months after contact with the Hepatitis B virus.  Many adults and most children don't have symptoms.  Symptoms may include: feeling very tired, fever, joint pain, yellow skin or eyes (jaundice), no appetite, dark urine, light colored stools, nausea, stomach pain, and vomiting. </p>
-          </div>
-        </div>
-        <div class="flip-button">
-          <button onclick="document.querySelector('#std-card-1').classList.toggle('hover');" class="btn">more info</button>
-        </div>
-      </div>            
-
-            
-            
-            
-            </div>
-        </div>
     </div>
+  </div>
 </div>
     
 <div class="container-fluid bg-grey" id="about">
@@ -297,7 +201,8 @@ $(document).ready(function(){
 <script src="js/lodash.js"></script>
 <script src="js/somemap.js"></script>
 <script src="js/events.js"></script>
-<script src="js/flipper.js"></script>
+<!-- <script src="js/flipper.js"></script> -->
+<script src="js/std-card.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
     </script>
