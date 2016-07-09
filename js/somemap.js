@@ -177,7 +177,6 @@ function show_marker_by_id(id){
   }
   m = markers[id];
   if(typeof m !== 'undefined'){
-    console.log(m.getPosition());
     m.setIcon(m.icon.replace('.', '-selected.'));
     m.setZIndex(10000);
     map.setCenter(m.getPosition());
@@ -242,7 +241,7 @@ $(document).ready(function() {
   $('body').on('click', '.show-marker', function(e) {
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $("#map").offset().top
+        scrollTop: $("#map-scroll-position").offset().top
     }, 1000);
     show_marker_by_id($(e.target).data('id'));
     return false;
