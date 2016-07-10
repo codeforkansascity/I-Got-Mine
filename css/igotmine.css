@@ -33,7 +33,7 @@ h2 {
     margin-bottom: 30px;
 }
 p + h2 {
-    margin-top:30px;
+    margin-top:40px;
 }
 h4 {
     font-size: 19px;
@@ -46,7 +46,6 @@ a {
     color: #397eda;
     transition: all 0.15s linear 0s;
 }
-
 a:hover {
     color: #397eda;
 }
@@ -481,6 +480,13 @@ p.ok-section-details {
     margin-top: 3px;
     line-height: 1.2;
     min-height: 70px;
+}
+
+.ok-warning {
+    padding: 10px;
+    border: solid #f4511e;
+    border-width: 1px;
+    color: #f4511e;
 }
 /* flipper css from https://davidwalsh.name/css-flip */
 /* entire container, keeps perspective */
