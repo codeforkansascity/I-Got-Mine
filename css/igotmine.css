@@ -32,7 +32,9 @@ h2 {
     color: #f4511e;
     margin-bottom: 30px;
 }
-
+p + h2 {
+    margin-top:30px;
+}
 h4 {
     font-size: 19px;
     line-height: 1.375em;
@@ -41,7 +43,7 @@ h4 {
 }
 
 a {
-    color: #41618b;
+    color: #397eda;
     transition: all 0.15s linear 0s;
 }
 
