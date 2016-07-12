@@ -6,8 +6,8 @@ var STD_CARD_TEMPLATE_COMPILED = _.template(
 '<section class="std-card-front-info">'+
 '<p class="l10n" data-lkey="<%= std.LocalizationKey %>Spread"><%= std.Howyougetit %></p>'+
 '<a href="<%- std.Website %>">STD description at CDC website >>></a>'+
-'<p class="std-card-front-info-treat"><strong>Testing:</strong> <%= std.Stdtesting %></p>'+
-'<p class="std-card-front-info-treat"><strong>Treatment:</strong> <%= std.Stdtreatment %></p>'+
+'<p class="std-card-front-info-treat"><strong class="l10n" data-lkey="Testing">Testing</strong>: <%= std.Stdtesting %></p>'+
+'<p class="std-card-front-info-treat"><strong class="l10n" data-lkey="Treatment">Treatment</strong>: <%= std.Stdtreatment %></p>'+
 '</section>'+
 '</div>'+
 '<div class="back">'+
@@ -18,7 +18,7 @@ var STD_CARD_TEMPLATE_COMPILED = _.template(
 '</div>'+
 '</div>'+
 '<div class="flip-button">'+
-'<button class="btn toggle-flip">more info</button>'+
+'<button class="btn toggle-flip l10n" data-lkey="MoreInfo">more info</button>'+
 '</div>'+
 '</div>'
 );
