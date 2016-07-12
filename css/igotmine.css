@@ -196,7 +196,19 @@ a:hover {
 
 .container-fluid {
     padding: 60px 50px;
+    border-bottom: 1px #e3e3e3 solid;
 }
+#about {
+    border-bottom: initial;
+}
+
+
+
+#events, #stdinfo {
+    background-color: #e6e9ed;
+}
+
+
 
 @media only screen and (max-device-width: 680px) {
     .container-fluid {
@@ -590,7 +602,7 @@ p.ok-section-details {
     display: none;
 }
 .std-card .front {
-    background-color: #e6e9ed;
+    background-color: #f6f6f6;
 }
 
 .std-card .front h3 {
