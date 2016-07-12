@@ -114,7 +114,7 @@ var stdlocation_compiled = _.template(
   '<h5><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
   't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+
-  '<time><%= prop.Days %> <%= prop.Hours %></time>'+
+  '<time><span class="l10n" data-lkey="<%= prop.Days %>"><%= prop.Days %><span> <%= prop.Hours %></time>'+
   '<section class="treatment-details"><strong class="l10n" data-lkey="Treated">Treated</strong>: <span class="l10n" data-lkey="<%= prop.LocalizationKey %>Treatment"><%= prop.Details %></span></section><br />'+
   '<button type="button" class="btn btn-secondary show-marker center-block l10n" data-type="treatment" data-id="<%= prop.id %>" data-lkey="ViewOnMap">view on map</button>'+
   '</div>'
