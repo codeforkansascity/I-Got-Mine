@@ -18,7 +18,8 @@ var STD_CARD_TEMPLATE_COMPILED = _.template(
 '</div>'+
 '</div>'+
 '<div class="flip-button">'+
-'<button class="btn toggle-flip l10n" data-lkey="MoreInfo">more info</button>'+
+'<button class="btn toggle-flip moreinfo l10n" data-lkey="MoreInfo">more info</button>'+
+'<button class="btn toggle-flip hideinfo l10n" data-lkey="HideInfo">hide info</button>'+
 '</div>'+
 '</div>'
 );

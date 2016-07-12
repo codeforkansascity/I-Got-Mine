@@ -533,11 +533,13 @@ p.ok-section-details {
 .front {
     /*z-index: 2;*/
     /* for firefox 31 */
+    -webkit-transform: rotateY(0);
     transform: rotateY(0deg);
 }
 /* back, initially hidden pane */
 
 .back {
+    -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
 }
 /* std card */
@@ -575,7 +577,18 @@ p.ok-section-details {
 .flip-button button:active {
     background-color: #FF6C2F;
 }
-
+.flip-button .hideinfo {
+    display: none;
+}
+.flipped .flip-button .hideinfo {
+    display: block;
+}
+.flip-button .moreinfo {
+    display: block;
+}
+.flipped .flip-button .moreinfo {
+    display: none;
+}
 .std-card .front {
     background-color: #e6e9ed;
 }
