@@ -510,6 +510,7 @@ p.ok-section-details {
 .std-card {
     display: inline-block;
     margin-left: 5px;
+    text-align: left;
 }
 /* flip the pane when hovered */
 
