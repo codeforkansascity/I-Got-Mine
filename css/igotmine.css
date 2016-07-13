@@ -583,13 +583,14 @@ p.ok-section-details {
     margin: 0 auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: #ff9366;
-    color: white;
+    color: #666;
+    background-color: #b1b1b1;
 }
 
 .flip-button button:hover,
 .flip-button button:active {
-    background-color: #FF6C2F;
+    color: #333;
+    background-color: #c6c6c6;
 }
 .flip-button .hideinfo {
     display: none;
@@ -608,7 +609,7 @@ p.ok-section-details {
     background-color: #d4d7dc;
     border-top: 1px #f3f4f6 solid;
     border-right: 1px #bfc2c8 solid;
-    border-bottom: 1px #a1a5ac solid;
+    border-bottom: 1px #bfc2c8 solid;
     border-left: 1px #f0f2f4 solid;
 }
 
@@ -617,7 +618,7 @@ p.ok-section-details {
     padding: 7px;
     text-align: center;
     color: #fff;
-    background: #FF6C2F;
+    background:  url("../images/igmikc-std-card-title-bkg.png") no-repeat, #FF6C2F;
 }
 
 .std-card-front-info {
