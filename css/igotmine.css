@@ -604,7 +604,12 @@ p.ok-section-details {
     display: none;
 }
 .std-card .front {
-    background-color: #f6f6f6;
+    color:#696969;
+    background-color: #d4d7dc;
+    border-top: 1px #f3f4f6 solid;
+    border-right: 1px #bfc2c8 solid;
+    border-bottom: 1px #a1a5ac solid;
+    border-left: 1px #f0f2f4 solid;
 }
 
 .std-card .front h3 {
