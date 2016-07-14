@@ -7,12 +7,16 @@
     width:100%;
     margin:auto;
   }  
+  .map-frame{
+  margin-right: 30px;
+}
 }
 h1.infowindow{
   font-size: 20px;
 }
 .map-frame{
   position: relative;
+  margin-right: 30px;
 }
 /*.googleMap{
   position: absolute;
