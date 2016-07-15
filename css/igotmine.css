@@ -72,7 +72,6 @@ a:hover {
     margin: 0 0 10px 0;
     padding: 0;
 }
-
 .jumbotron li a {
     display: block;
     margin: 0;
@@ -117,7 +116,9 @@ a:hover {
     body {
         background: url(../images/igmikc-bkg-couple.png) no-repeat scroll 95% 90px, #FF6C2F url("../images/igmikc-bkg-condom-strip.png") repeat-x 0 290px;
     }
-
+    .ok-view-on-mobile-only {
+        display: none;
+    }
     h2 {
         font-size: 40px;
     }
@@ -137,7 +138,6 @@ a:hover {
         padding-left: 125px;
         font-size: 40px;
     }
-
     .jumbotron li a {
         width: 455px;
     }
