@@ -500,6 +500,9 @@ p.ok-section-details {
     border-width: 1px;
     color: #f4511e;
 }
+.ok-warning-glyphicon {
+    color: #FF6C2F;
+}
 /* flipper css from https://davidwalsh.name/css-flip */
 /* entire container, keeps perspective */
 
@@ -581,12 +584,14 @@ p.ok-section-details {
 .flip-button button {
     width: 200px;
     margin: 0 auto;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius:6px 6px 0 0;
     color: #666;
     background-color: #b1b1b1;
 }
-
+.ok-warning-glyphicon-inbutton {
+    padding-right: 7px;
+    color: #f4511e;
+}
 .flip-button button:hover,
 .flip-button button:active {
     color: #333;
@@ -611,6 +616,9 @@ p.ok-section-details {
     border-right: 1px #bfc2c8 solid;
     border-bottom: 1px #bfc2c8 solid;
     border-left: 1px #f0f2f4 solid;
+    -moz-box-shadow: 2px 3px 10px #707070;
+    -webkit-box-shadow: 2px 3px 10px #707070;
+    box-shadow: 2px 3px 10px #707070;
 }
 
 .std-card .front h3 {
