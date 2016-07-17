@@ -424,28 +424,25 @@ footer .glyphicon {
     margin: 0;
     padding: 0;
 }
-
+/* event carousel */
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 70%;
     height: 70%;
     margin: auto;
 }
-
 .carousel-caption {
     background: linear-gradient(rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.6));
 }
-/* event carousel */
-
 .event-carousel-inner .item img {
     height: 400px;
 }
+/* end of event carousel */
 
 .section-header {
     width: 100%;
     text-align: left;
 }
-
 .section-header h1,
 h2,
 h3 {
