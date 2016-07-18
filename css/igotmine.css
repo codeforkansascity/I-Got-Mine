@@ -627,12 +627,34 @@ p.ok-section-details {
 }
 
 .std-card-front-info {
-    padding: 0 20px;
+    padding: 10px 20px 0;
+}
+.std-card-front-info strong {
+    display: block;
+    width: 9em;
+    margin: 20px 0 0 12px;
+    padding: 2px 5px 1px;
+    color: #fff;
+    background: #FF6C2F;
+    font-size: 9px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.std-card-front-info ul {
+    padding: 10px 0 0 7px;
+    list-style: none;
 }
 
-.std-card-front-info a {
-    display: block;
-    margin-bottom: 12px;
+.std-card-front-info li { 
+    padding-left: 1em; 
+    text-indent: -.7em;
+}
+.std-card-front-info li:before {
+    content: "•";
+    padding-right: 7px;
+    color: #FF6C2F; 
 }
 
 .std-card .back {
@@ -644,9 +666,12 @@ p.ok-section-details {
     width: 250px;
     height: 250px;
 }
-
+.std-card .back h3 {
+    padding-top:20px;
+    color: #f4511e;       
+}
 .std-card .back p,
-.std-card p.std-card-front-info-treat {
+.std-card .std-card-front-info-treat {
     font-size: 14px;
     line-height: 1.4;
 }

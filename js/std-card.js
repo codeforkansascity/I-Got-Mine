@@ -4,10 +4,10 @@ var STD_CARD_TEMPLATE_COMPILED = _.template(
 '<div class="front">'+
 '<h3 class="l10n" data-lkey="<%= std.LocalizationKey %>"><%= std.Name %></h3>'+
 '<section class="std-card-front-info">'+
-'<p class="l10n" data-lkey="<%= std.LocalizationKey %>Spread"><%= std.Howyougetit %></p>'+
-'<a href="<%- std.Website %>" class="l10n" data-lkey="STDDescriptionCDC">STD description at CDC website </a>'+
-'<p class="std-card-front-info-treat"><strong class="l10n" data-lkey="Testing">Testing</strong>: <%= std.Stdtesting %></p>'+
-'<p class="std-card-front-info-treat"><strong class="l10n" data-lkey="Treatment">Treatment</strong>: <%= std.Stdtreatment %></p>'+
+'<p class="l10n" data-lkey="<%= std.LocalizationKey %>Spread"><%= std.Howyougetit %><br />'+
+'<a href="<%- std.Website %>" class="l10n" data-lkey="STDDescriptionCDC">STD description at CDC website </a></p>'+
+'<strong class="l10n" data-lkey="Testing">Testing</strong><ul class="std-card-front-info-treat"> <%= std.Stdtesting %></ul>'+
+'<strong class="l10n" data-lkey="Treatment">Treatment</strong><ul class="std-card-front-info-treat"> <%= std.Stdtreatment %></ul>'+
 '</section>'+
 '</div>'+
 '<div class="back">'+
