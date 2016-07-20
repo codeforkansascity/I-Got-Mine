@@ -16,9 +16,10 @@ h1 {
 
 .ok-highlight {
     color: #ffc98e;
-    white-space: nowrap;
 }
-
+.ok-nowrap {
+    white-space: nowrap;    
+}
 h2,
 h3,
 h4,
@@ -489,16 +490,16 @@ p.ok-section-details {
     line-height: 1.2;
     min-height: 70px;
 }
-
+.ok-warning-message {
+    line-height: 1.8;
+}
 .ok-warning {
     padding: 10px;
     border: solid #f4511e;
     border-width: 1px;
     color: #f4511e;
 }
-.ok-warning-glyphicon {
-    color: #FF6C2F;
-}
+
 /* flipper css from https://davidwalsh.name/css-flip */
 /* entire container, keeps perspective */
 
@@ -604,13 +605,7 @@ p.ok-section-details {
     background-color: #ff753c;    
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-    box-shadow: none;
-    
-    
-    
-    
-    
-    
+    box-shadow: none; 
 }
 .flip-button button:hover,
 .flip-button button:active {
