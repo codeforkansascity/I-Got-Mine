@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/igotmine.css">  
   <link rel="stylesheet" href="../css/somemap.css">
-  <link rel="stylesheet" href="../css/responsive-calendar.css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:400,300,700">
@@ -231,18 +230,7 @@ $(document).ready(function(){
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
     </script>
-<script src="../js/responsive-calendar.js"></script>
 <script type="text/javascript">
-  $(document).ready(function () {
-    $(".responsive-calendar").responsiveCalendar({
-      time: '2013-05',
-      events: {
-        "2013-04-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
-        "2013-04-26": {"number": 1, "url": "http://w3widgets.com"},
-        "2013-05-03":{"number": 1},
-        "2013-06-12": {}}
-    });
-  });
   //close menu on select
   $('.nav a').on('click', function(){
     $('.navbar-toggle').click() //bootstrap 3.x by Richard
