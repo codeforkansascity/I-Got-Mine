@@ -456,7 +456,7 @@ p.ok-section-details {
 /* Treatment center info - OK */
 
 .ok-treatment {
-    height: 360px;
+    height: 380px;
     padding: 20px 20px 10px;
     font-size: 14px;
     line-height: 1.4;
@@ -471,14 +471,6 @@ p.ok-section-details {
     height:auto;
     }
 }
-
-
-
-
-
-
-
-
 .ok-treatment h5 {
     font-size: 16px;
     font-weight: 700;
