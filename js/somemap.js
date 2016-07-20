@@ -3,6 +3,8 @@ var IMAGE_URLS = {
   EVENT: "images/igmikc-map-icon-event.png",
   TREATMENT: "images/igmikc-map-icon-treatment.png"
 };
+var DEFAULT_EVENT_IMAGES = ['http://i.imgur.com/dtHaKF6.jpg','http://i.imgur.com/Szs6sUL.jpg'];
+var DEFAULT_EVENT_IMAGE = DEFAULT_EVENT_IMAGES[0];
 var DEFAULT_MAP_CENTER = {
   LAT: 39.0397266,
   LNG: -94.5785667
@@ -109,6 +111,18 @@ var infowindow_compiled = _.template(
   '})%>'+
   '</section>'+
 '</div>');
+var event_carousel_template_compiled = _.template(
+'<div class="item <%= event.Active %>">'+
+  '<img class="img-responsive img-rounded" src="<%- event.EventImage %>" alt="Event 1">'+
+  '<div class="carousel-caption">'+
+    '<h3><%= event.Name %></h3>'+
+    '<p><%= event.Date %> <%= event.Days %> <%= event.Hours %></p>'+
+    '<p><%= event.Address %></p>'+
+    '<p><%= event.Details %></p>'+
+    '<button type="button" class="btn btn-secondary show-marker center-block l10n" data-type="treatment" data-id="<%= event.id %>" data-lkey="ViewOnMap">view on map</button>'+
+  '</div>'+
+'</div>'
+);
 var stdlocation_compiled = _.template(
   '<div class="col-xs-6 col-md-4 ok-treatment">'+
   '<h5><%= prop.Name %></h5>'+
@@ -121,8 +135,11 @@ var stdlocation_compiled = _.template(
 );
 var infowindowdom = document.getElementById('info-window');
 var markers = [];
-function put_geoJson_on_map(geoJs){
-  var i, coords, lat_lng, marker, fp, icon_url, std_html='';
+var events = [];
+function geoJson_data_init(geoJs){
+  var i, e, coords, lat_lng, marker, fp, icon_url, std_html='';
+  var thres_date = new Date();
+  thres_date.setMonth(thres_date.getMonth()+1);
   for (var i = 0; i < geoJs.features.length; i++) {
     fp = geoJs.features[i];
     coords = fp.geometry.coordinates;
@@ -133,7 +150,14 @@ function put_geoJson_on_map(geoJs){
       fp.properties.Title = 'Free Condoms';
     }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.EVENT){
       icon_url = IMAGE_URLS.EVENT;
-      fp.properties.Title = 'Event';
+      e = fp.properties;
+      e.Title = 'Event';
+      if(new Date(e.Date) < thres_date){
+        if(e.EventImage == ''){
+          e.EventImage = DEFAULT_EVENT_IMAGES[i % DEFAULT_EVENT_IMAGES.length];
+        }
+        events.push(e);
+      }
     }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.TREATMENT){
       icon_url = IMAGE_URLS.TREATMENT;
       fp.properties.Title = 'STD Treatment Center';
@@ -160,6 +184,16 @@ function put_geoJson_on_map(geoJs){
     });
     markers.push(marker);
   }
+  // if(carousel_inner_html === ''){
+  //   //no event
+  //   var no_event={
+  //     Name:"No Upcoming Event",
+  //     Active: "active",
+  //     EventImage:DEFAULT_EVENT_IMAGE
+  //   };
+  //   carousel_inner_html = event_carousel_template_compiled({'event':no_event});
+  // }
+  // document.getElementById('event-carousel-inner').innerHTML = carousel_inner_html;
   document.getElementById('std-treatment-list-section').innerHTML = std_html;
 }
 
@@ -200,6 +234,46 @@ function highlight_markers_by_type (marker_type) {
   }
 }
 
+// 
+// events
+// function locations_to_recent_events(locations) {
+//   // console.log(locations);
+//   var events = [], 
+//     thres_date = new Date();
+//   thres_date.setMonth(thres_date.getMonth()+1);
+//   for(var i=locations.length;i--;){
+//     // console.log(locations[i].Type.toLowerCase());    
+//     if(locations[i].Type.toLowerCase() == 'event' && new Date(locations[i].Date) < thres_date){
+//       if(locations[i].EventImage == ''){
+//         locations[i].EventImage = DEFAULT_EVENT_IMAGES[i % DEFAULT_EVENT_IMAGES.length];
+//       }
+//       events.push(locations[i]);
+//     }
+//   }
+
+//   // console.log(events);
+//   return events;
+// }
+
+function event_carousel_init() {
+  var carousel_inner_html = '';
+  if(events.length > 0){
+    //sort
+    events.sort(function(a,b) {return new Date(a.Date) > new Date(b.Date)});
+    events[0].Active = 'active';
+    for(var i=events.length;i--;){
+      carousel_inner_html += event_carousel_template_compiled({'event':events[i]});
+    }
+  }else{
+    var no_event={
+      Name:"No Upcoming Event",
+      Active: "active",
+      EventImage:DEFAULT_EVENT_IMAGE
+    };
+    carousel_inner_html = event_carousel_template_compiled({'event':no_event});
+  }
+  document.getElementById('event-carousel-inner').innerHTML = carousel_inner_html;
+}
 
 // Loop through the results array and place a marker for each
 // set of coordinates.

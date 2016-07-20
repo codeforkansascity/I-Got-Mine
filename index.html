@@ -223,7 +223,7 @@ $(document).ready(function(){
 <script src="js/tabletop.js"></script>
 <script src="js/lodash.js"></script>
 <script src="js/somemap.js"></script>
-<script src="js/events.js"></script>
+<!-- <script src="js/events.js"></script> -->
 <!-- <script src="js/flipper.js"></script> -->
 <script src="js/std-card.js"></script>
 <script src="js/l10n.js"></script>
@@ -241,11 +241,9 @@ $(document).ready(function(){
       //locations
       var locations = data.Locations.elements;
       var geoJs = location_data_to_geoJson(locations);
-      put_geoJson_on_map(geoJs);
+      geoJson_data_init(geoJs);
       //events
-      var locations = data.Locations.elements;
-      events = locations_to_recent_events(locations);
-      event_carousel_init(events);
+      event_carousel_init();
       //std cards
       var stds = data.Stdtesting.elements;
       init_std_cards(stds);
