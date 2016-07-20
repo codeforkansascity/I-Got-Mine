@@ -348,12 +348,6 @@ a:hover {
     height: 48px;
 }
 
-footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #f4511e;
-}
-
 .slideanim {
     visibility: hidden;
 }
@@ -588,16 +582,33 @@ p.ok-section-details {
     margin: 0 auto;
     border-radius:6px 6px 0 0;
     color: #666;
-    background-color: #b1b1b1;
+    background: none;
+    transition: all 0.15s linear 0s;
 }
 .ok-warning-glyphicon-inbutton {
-    padding-right: 7px;
-    color: #f4511e;
+    padding:14px;
+    border: solid thin #ffc98e;
+    border-radius: 50%;   
+    color: #ffc98e;
+    background-color: #ff753c;
+    transition: all 0.15s linear 0s;
+}
+.flip-button button:hover .ok-warning-glyphicon-inbutton,
+.flip-button button:active .ok-warning-glyphicon-inbutton {
+    color: #fff;
+    background-color: #f4511e;    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 .flip-button button:hover,
 .flip-button button:active {
-    color: #333;
-    background-color: #c6c6c6;
+    color: #f4511e;
 }
 .flip-button .hideinfo {
     display: none;
@@ -707,25 +718,20 @@ footer {
     background: #333;
     color: #666;
 }
-
 footer.container-fluid {
     padding: 50px 20px 20px 50px;
 }
-
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
     color: #ff753c;
 }
-
 footer .glyphicon:hover {
     color: #fff;
 }
-
 footer p {
     font-size: 13px;
 }
-
 footer .code-for-kc-logo {
     display: inline-block;
     width: 136px;
