@@ -587,18 +587,24 @@ p.ok-section-details {
 }
 .ok-warning-glyphicon-inbutton {
     padding:14px;
-    border: solid thin #ffc98e;
+    border: solid thin #ffead3;
+    border-color: #ffa27c;
     border-radius: 50%;   
-    color: #ffc98e;
-    background-color: #ff753c;
+    color: #ffead3;
+    background-color: #f4511e;
+    -moz-box-shadow: inset 2px 3px 10px #ed713d;
+    -webkit-box-shadow: inset 2px 3px 10px #ed713d;
+    box-shadow: inset 2px 3px 10px #c84c26;
     transition: all 0.15s linear 0s;
 }
 .flip-button button:hover .ok-warning-glyphicon-inbutton,
 .flip-button button:active .ok-warning-glyphicon-inbutton {
     color: #fff;
-    background-color: #f4511e;    
-    
-    
+    border-color: #f4511e; 
+    background-color: #ff753c;    
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
     
     
     
@@ -629,9 +635,9 @@ p.ok-section-details {
     border-right: 1px #bfc2c8 solid;
     border-bottom: 1px #bfc2c8 solid;
     border-left: 1px #f0f2f4 solid;
-    -moz-box-shadow: 2px 3px 10px #707070;
-    -webkit-box-shadow: 2px 3px 10px #707070;
-    box-shadow: 2px 3px 10px #707070;
+    -moz-box-shadow: 2px 3px 10px #999;
+    -webkit-box-shadow: 2px 3px 10px #999;
+    box-shadow: 2px 3px 10px #999;
 }
 
 .std-card .front h3 {
