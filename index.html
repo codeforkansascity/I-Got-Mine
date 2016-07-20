@@ -181,8 +181,31 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/tabletop.js"></script>
+<script src="js/lodash.js"></script>
+<script src="js/somemap.js"></script>
+<!-- <script src="js/events.js"></script> -->
+<!-- <script src="js/flipper.js"></script> -->
+<script src="js/std-card.js"></script>
+<script src="js/l10n.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
+    </script>
 <script>
 $(document).ready(function(){
+  //close menu on select
+  $('.nav a').on('click', function(){
+    $('.navbar-toggle').click() //bootstrap 3.x by Richard
+  });
+  //bootstrap swipe fix
+  $(".carousel").swiperight(function() {  
+    $(".carousel").carousel('prev');  
+  });  
+  $(".carousel").swipeleft(function() {  
+    $(".carousel").carousel('next');  
+  });
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
@@ -215,25 +238,6 @@ $(document).ready(function(){
         }
     });
   });
-})
-</script>
-
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="js/tabletop.js"></script>
-<script src="js/lodash.js"></script>
-<script src="js/somemap.js"></script>
-<!-- <script src="js/events.js"></script> -->
-<!-- <script src="js/flipper.js"></script> -->
-<script src="js/std-card.js"></script>
-<script src="js/l10n.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
-    </script>
-<script type="text/javascript">
-  //close menu on select
-  $('.nav a').on('click', function(){
-    $('.navbar-toggle').click() //bootstrap 3.x by Richard
-  });
   //load google sheet data
   Tabletop.init( { key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
     callback: function(data, tabletop) {
@@ -250,6 +254,7 @@ $(document).ready(function(){
       init_l10n(data.Localization.elements);
     },
     simpleSheet: false } );
+})
 </script>
 <script>
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
