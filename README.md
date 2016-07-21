@@ -33,3 +33,10 @@ Every year, many residents of Kansas City forego services provided by the City o
 * Come to [HackNights](http://www.meetup.com/KCBrigade/)
 * Attend HackKC this comming June 4th and 5th.
 * Contact your name on [Meetup](http://www.meetup.com/KCBrigade/)
+
+## Get Started
+
+* Install Git and [Jekyll](https://jekyllrb.com/)
+* `git clone git@github.com:codeforkansascity/I-Got-Mine.git`
+* `cd I-Got-Mine`
+* `jekyll serve`

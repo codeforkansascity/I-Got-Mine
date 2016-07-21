@@ -51,14 +51,15 @@ a:hover {
     color: #397eda;
 }
 /* jumbotron (top of the screen) styles - OK */
-
+.jumbotron input[type="radio"] {
+    display: none; 
+}
 .jumbotron {
     color: #fff;
     padding: 45px 5% 1px;
     margin-bottom: 10px;
     background-color: transparent;
 }
-
 .jumbotron ul {
     margin-top: 0;
     padding-top: 0;
@@ -67,7 +68,6 @@ a:hover {
     text-decoration: none;
     color: #ffc98e;
 }
-
 .jumbotron li {
     list-style-type: none;
     margin: 0 0 10px 0;
@@ -83,31 +83,26 @@ a:hover {
     color: #fff;
     background-color: rgba(255, 117, 60, .8);
 }
-
 .jumbotron li a:hover {
     border-color: #ffa23c;
     text-decoration: none;
     background-color: #fe8858;
 }
-
 .jumbotron li:first-child {
     padding-top: 0;
     padding-left: 0px;
     margin-left: -23px;
 }
-
 .jumbotron li:last-child {
     padding-left: 0px;
     margin-left: -23px;
 }
-
 .jumbotron li:last-child a {
     font-size: 18px;
     padding: 20px 0 0 0;
     border: none;
     background: transparent;
 }
-
 .jumbotron li:last-child a:hover {
     color: #ffd2bf;
 }
@@ -202,30 +197,21 @@ a:hover {
 #about {
     border-bottom: initial;
 }
-
-
-
 #events, #stdinfo {
     background-color: #e6e9ed;
 }
-
-
-
 @media only screen and (max-device-width: 680px) {
     .container-fluid {
         padding: 60px 10px;
     };
 }
-
 .bg-grey {
     background-color: #f6f6f6;
 }
-
 .logo-small {
     color: #f4511e;
     font-size: 50px;
 }
-
 .logo {
     color: #f4511e;
     font-size: 200px;
@@ -314,7 +300,6 @@ a:hover {
     background-color: #f4511e;
     color: #fff;
 }
-
 .navbar {
     margin-bottom: 0;
     background-color: #ff753c;
@@ -343,7 +328,6 @@ a:hover {
     color: #fff !important;
 }
 /* adjustments to accomodate logo in top corner -OK */
-
 .navbar-brand {
     padding: 0px 0px;
     height: 48px;
