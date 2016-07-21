@@ -589,19 +589,21 @@ p.ok-section-details {
 .ok-warning-glyphicon-inbutton {
     padding:14px;
     border: solid thin #ffead3;
-    border-color: #ffa27c;
+    border-color: #bfc2c8;
     border-radius: 50%;   
     color: #ffead3;
     background-color: #f4511e;
     -moz-box-shadow: inset 2px 3px 10px #ed713d;
     -webkit-box-shadow: inset 2px 3px 10px #ed713d;
     box-shadow: inset 2px 3px 10px #c84c26;
-    transition: all 0.15s linear 0s;
+    transition: all 0.15s ease-in 0s;
 }
 .flip-button button:hover .ok-warning-glyphicon-inbutton,
 .flip-button button:active .ok-warning-glyphicon-inbutton {
+    padding:15px; 
+    font-size: 16px;
     color: #fff;
-    border-color: #f4511e; 
+    border-color: #ff753c; 
     background-color: #ff753c;    
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
