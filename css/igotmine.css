@@ -189,6 +189,25 @@ a:hover {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #d4d4d4;
 }
+/* formatting of 'view on map' button in events carousel. *This is a hack.* Please, replace "treatment" with "event" data-type both in the Javascript, where the button is defined (I cannot find it) and in the three style definitions below - OK */
+#myCarousel [data-type="treatment"] {
+    padding: 8px 15px 8px 40px;
+    border:solid thin #fff;
+    background: url("../images/igmikc-map-icon-event-carousel-btn.png") no-repeat 2px 2px, rgba(255,255,255,0.3);
+    transition: all 0.15s linear 0s;   
+}
+#myCarousel [data-type="treatment"]:hover {
+    padding: 8px 15px 8px 40px;
+    color:#fff;
+    border-color:#f4511e;    
+    background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, rgba(255,255,255,0.4);
+}
+#myCarousel [data-type="treatment"]:active {
+    padding: 8px 15px 8px 40px;
+    color:#f4511e;
+    border-color:#f4511e;      
+    background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, rgba(255,255,255,0.8);
+}
 
 .container-fluid {
     padding: 60px 50px;
