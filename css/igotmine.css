@@ -148,16 +148,19 @@ a:hover {
 [data-type="condom"] {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-condom.png") no-repeat 2px 2px, #e1e1e1;
+    transition: all 0.15s linear 0s;  
 }
 
 [data-type="event"] {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-event.png") no-repeat 2px 2px, #e1e1e1;
+    transition: all 0.15s linear 0s;  
 }
 
 [data-type="treatment"] {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment.png") no-repeat 2px 2px, #e1e1e1;
+    transition: all 0.15s linear 0s;  
 }
 
 [data-type="condom"]:hover {
@@ -189,20 +192,20 @@ a:hover {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #d4d4d4;
 }
-/* formatting of 'view on map' button in events carousel. *This is a hack.* Please, replace "treatment" with "event" data-type both in the Javascript, where the button is defined (I cannot find it) and in the three style definitions below - OK */
-#myCarousel [data-type="treatment"] {
+/* formatting of 'view on map' button in events carousel. */
+#myCarousel [data-type="event"] {
     padding: 8px 15px 8px 40px;
     border:solid thin #fff;
     background: url("../images/igmikc-map-icon-event-carousel-btn.png") no-repeat 2px 2px, rgba(255,255,255,0.3);
     transition: all 0.15s linear 0s;   
 }
-#myCarousel [data-type="treatment"]:hover {
+#myCarousel [data-type="event"]:hover {
     padding: 8px 15px 8px 40px;
     color:#fff;
     border-color:#f4511e;    
     background: url("../images/igmikc-map-icon-event-selected.png") no-repeat 2px 2px, rgba(255,255,255,0.4);
 }
-#myCarousel [data-type="treatment"]:active {
+#myCarousel [data-type="event"]:active {
     padding: 8px 15px 8px 40px;
     color:#f4511e;
     border-color:#f4511e;      
@@ -591,8 +594,6 @@ p.ok-section-details {
 }
 .ok-warning-glyphicon-inbutton {
     padding:14px;
-    border: solid thin #ffead3;
-    border-color: #bfc2c8;
     border-radius: 50%;   
     color: #ffead3;
     background-color: #f4511e;
@@ -606,7 +607,6 @@ p.ok-section-details {
     padding:15px; 
     font-size: 16px;
     color: #fff;
-    border-color: #ff753c; 
     background-color: #ff753c;    
     -moz-box-shadow: none;
     -webkit-box-shadow: none;

@@ -18,7 +18,7 @@ var STD_CARD_TEMPLATE_COMPILED = _.template(
 '</div>'+
 '</div>'+
 '<div class="flip-button">'+
-'<button class="btn toggle-flip moreinfo l10n" data-lkey="MoreInfo"><span class="glyphicon glyphicon-picture ok-warning-glyphicon-inbutton"></span><br />view symptoms</button>'+
+'<button class="btn toggle-flip moreinfo l10n" data-lkey="MoreInfo"><span class="glyphicon glyphicon-repeat ok-warning-glyphicon-inbutton"></span><br />view symptoms</button>'+
 '<button class="btn toggle-flip hideinfo l10n" data-lkey="HideInfo"><span class="glyphicon glyphicon-remove ok-warning-glyphicon-inbutton"></span><br />hide symptoms</button>'+
 '</div>'+
 '</div>'

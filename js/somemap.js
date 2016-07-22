@@ -119,7 +119,7 @@ var event_carousel_template_compiled = _.template(
     '<p><%= event.Date %> <%= event.Days %> <%= event.Hours %></p>'+
     '<p><%= event.Address %></p>'+
     '<p><%= event.Details %></p>'+
-    '<button type="button" class="btn btn-secondary show-marker center-block l10n" data-type="treatment" data-id="<%= event.id %>" data-lkey="ViewOnMap">view on map</button>'+
+    '<button type="button" class="btn btn-secondary show-marker center-block l10n" data-type="event" data-id="<%= event.id %>" data-lkey="ViewOnMap">view on map</button>'+
   '</div>'+
 '</div>'
 );
