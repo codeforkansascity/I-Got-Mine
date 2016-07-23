@@ -30,14 +30,6 @@ function showMap (center) {
     mapTypeId:google.maps.MapTypeId.ROADMAP
   });
 
-
-  // Create a <script> tag and set the USGS URL as the source.
-  var script = document.createElement('script');
-  // (In this example we use a locally stored copy instead.)
-  script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
-  // script.src = '/maps/documentation/javascript/tutorials/js/earthquake_GeoJSONP.js';
-  document.getElementsByTagName('head')[0].appendChild(script);
-
   //add current location as center if the user is on mobile phone
   if(mobileAndTabletcheck()){
     var myMarker = new google.maps.Marker({
