@@ -598,7 +598,7 @@ p.ok-section-details {
     -moz-box-shadow: inset 2px 3px 10px #ed713d;
     -webkit-box-shadow: inset 2px 3px 10px #ed713d;
     box-shadow: inset 2px 3px 10px #c84c26;
-    transition: all 0.15s ease-in 0s;
+    transition: all 0.15s ease-in 0.1s;
 }
 .flip-button button:hover .ok-warning-glyphicon-inbutton,
 .flip-button button:active .ok-warning-glyphicon-inbutton {
@@ -706,6 +706,7 @@ p.ok-section-details {
     margin-left: 8px;
     text-align: left;
     background:#fff;
+    transition: all 0.15s ease-in 0s;
 } 
 .ok-myth-myth {
     padding: 20px;
@@ -716,41 +717,56 @@ p.ok-section-details {
     top: 200px;
     left: 0;
     width: 100%;
-    padding: 20px;    
+    padding: 20px; 
+    transition: all 0.15s ease-in 0s; 
 }
 .ok-myth-question, .ok-myth-question-false {
     position: absolute;
     top: 50%;
-    left: 66%;
+    left: 75%;
     margin-right: -66%;
     transform: translate(-66%, -50%);
     width:80px;
     height:80px;
-    padding-top: 25px;
+    padding-top: 18px;
     text-align: center;
     border-radius: 50%;
     color:#fff;
     letter-spacing: 1px;
-    background:#f4511e;   
+    border:solid 10px rgba(255,255,255,.3);
+    background:#f4511e;
+    transition: all 0.25s ease-in 0s; 
 }
 .ok-myth-question-false {
     visibility: hidden;
+    border:0;
+    color:#f4511e;
+    font-size: 8px;
 }
 
 .ok-myth-number {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 18%;
     margin-right: -25%;
     transform: translate(-25%, -50%);
     font-family: Quicksand, Montserrat, sans-serif;
     font-size: 160px;
-    color:rgba(0,0,0,.1)
+    color:rgba(0,0,0,.1);
 }
-.ok-myth-card-container:hover .ok-myth-question-false, .ok-myth-card-container:hover .ok-myth-truth {
-    visibility: visible;
+.ok-myth-card-container:hover, .ok-myth-card-container:focus {
+    background:#fffcf9;
 }
-
+.ok-myth-card-container:hover .ok-myth-question-false, .ok-myth-card-container:focus .ok-myth-question-false {
+    visibility: visible; 
+    padding-top: 27px;
+    border:0;
+    color:#fff;
+    font-size: 17px;
+}
+.ok-myth-card-container:hover .ok-myth-truth, .ok-myth-card-container:focus .ok-myth-truth {
+    visibility: visible; 
+}
 
 
 #about {
