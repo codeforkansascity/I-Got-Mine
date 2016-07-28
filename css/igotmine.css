@@ -696,6 +696,80 @@ p.ok-section-details {
     line-height: 1.4;
 }
 
+
+
+
+/* STD myths section */
+dl.ok-std-myths {
+    max-width: 700px;
+    margin: 10px auto;
+	counter-reset: ok-counter; /* setting up counter for list items */
+}
+.ok-std-myths dt {
+    position: relative;
+    margin: 0;
+    padding: 15px 90px 0 40px;
+    font-weight: 100;
+    background: #fff;
+}
+.ok-std-myths dt hr { 
+    margin: 0; 
+    padding:5px 0;
+    border: 0; 
+    border-bottom: 1px dotted #666; 
+}
+.ok-std-myths dd {
+    position: relative;
+    margin: 0;
+    padding: 15px 90px 15px 40px;
+    border-bottom:  1px solid #ccc;
+}
+/* styling list numbers, for counter, see https://css-tricks.com/numbering-in-style/ */
+.ok-std-myths dd:before {
+	content: counter(ok-counter);
+	counter-increment: ok-counter;
+    position:absolute;
+    left: 10px;
+    top: 0;
+    transform: translate(0, -50%);
+    padding-top: 0;
+    font-family: Quicksand, Montserrat, sans-serif;
+    font-weight: 200;
+    font-size: 60px;
+    color: #f4511e;
+}
+/* true/false button */
+.ok-myth-question, .ok-myth-question-false {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    transform: translate(0, -50%);
+    width:80px;
+    height:80px;
+    padding-top: 18px;
+    text-align: center;
+    border-radius: 50%;
+    color:#fff;
+    letter-spacing: 1px;
+    border:solid 10px rgba(255,255,255,.3);
+    background:#f4511e;
+    transition: all 0.25s ease-in 0s; 
+}
+.ok-myth-question-false {
+    visibility: hidden;
+    border:0;
+    color:#f4511e;
+    font-size: 8px;
+}
+
+
+
+
+
+
+
+
 /* myth cards */
 .ok-myth-card-container {
     position: relative;
@@ -720,6 +794,7 @@ p.ok-section-details {
     padding: 20px; 
     transition: all 0.15s ease-in 0s; 
 }
+/*
 .ok-myth-question, .ok-myth-question-false {
     position: absolute;
     top: 50%;
@@ -743,7 +818,7 @@ p.ok-section-details {
     color:#f4511e;
     font-size: 8px;
 }
-
+*/
 .ok-myth-number {
     position: absolute;
     top: 50%;
@@ -754,6 +829,8 @@ p.ok-section-details {
     font-size: 160px;
     color:rgba(0,0,0,.1);
 }
+
+
 .ok-myth-card-container:hover, .ok-myth-card-container:focus {
     background:#fffcf9;
 }
@@ -767,6 +844,10 @@ p.ok-section-details {
 .ok-myth-card-container:hover .ok-myth-truth, .ok-myth-card-container:focus .ok-myth-truth {
     visibility: visible; 
 }
+
+
+
+
 
 
 #about {
