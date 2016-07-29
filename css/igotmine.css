@@ -696,10 +696,7 @@ p.ok-section-details {
     line-height: 1.4;
 }
 
-
-
-
-/* STD myths section */
+/* The list of STD myths */
 dl.ok-std-myths {
     max-width: 700px;
     margin: 10px auto;
@@ -708,7 +705,7 @@ dl.ok-std-myths {
 .ok-std-myths dt {
     position: relative;
     margin: 0;
-    padding: 15px 90px 0 40px;
+    padding: 15px 90px 0 50px;
     font-weight: 100;
     background: #fff;
 }
@@ -721,10 +718,12 @@ dl.ok-std-myths {
 .ok-std-myths dd {
     position: relative;
     margin: 0;
-    padding: 15px 90px 15px 40px;
-    border-bottom:  1px solid #ccc;
+    padding: 15px 90px 15px 50px;
+    background: #eff1f4;
+    color: #eff1f4;
+    transition: all 0.45s ease-in 0s; 
 }
-/* styling list numbers, for counter, see https://css-tricks.com/numbering-in-style/ */
+/* styling list numbers (for counter, see https://css-tricks.com/numbering-in-style/) */
 .ok-std-myths dd:before {
 	content: counter(ok-counter);
 	counter-increment: ok-counter;
@@ -762,93 +761,20 @@ dl.ok-std-myths {
     color:#f4511e;
     font-size: 8px;
 }
-
-
-
-
-
-
-
-
-/* myth cards */
-.ok-myth-card-container {
-    position: relative;
-    width: 320px;
-    height: 320px;
-    border-radius: 6px;
-    display: inline-block;
-    margin-left: 8px;
-    text-align: left;
-    background:#fff;
-    transition: all 0.15s ease-in 0s;
-} 
-.ok-myth-myth {
-    padding: 20px;
-}
-.ok-myth-truth {
-    visibility:hidden;
-    position: absolute;
-    top: 200px;
-    left: 0;
-    width: 100%;
-    padding: 20px; 
-    transition: all 0.15s ease-in 0s; 
-}
-/*
-.ok-myth-question, .ok-myth-question-false {
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    margin-right: -66%;
-    transform: translate(-66%, -50%);
-    width:80px;
-    height:80px;
-    padding-top: 18px;
-    text-align: center;
-    border-radius: 50%;
-    color:#fff;
-    letter-spacing: 1px;
-    border:solid 10px rgba(255,255,255,.3);
-    background:#f4511e;
-    transition: all 0.25s ease-in 0s; 
-}
-.ok-myth-question-false {
-    visibility: hidden;
-    border:0;
-    color:#f4511e;
-    font-size: 8px;
-}
-*/
-.ok-myth-number {
-    position: absolute;
-    top: 50%;
-    left: 18%;
-    margin-right: -25%;
-    transform: translate(-25%, -50%);
-    font-family: Quicksand, Montserrat, sans-serif;
-    font-size: 160px;
-    color:rgba(0,0,0,.1);
-}
-
-
-.ok-myth-card-container:hover, .ok-myth-card-container:focus {
-    background:#fffcf9;
-}
-.ok-myth-card-container:hover .ok-myth-question-false, .ok-myth-card-container:focus .ok-myth-question-false {
+.ok-std-myths dd:hover .ok-myth-question-false, .ok-std-myths dd:active .ok-myth-question-false, .ok-std-myths dd:focus .ok-myth-question-false {
     visibility: visible; 
     padding-top: 27px;
     border:0;
     color:#fff;
     font-size: 17px;
+    text-decoration: none;
 }
-.ok-myth-card-container:hover .ok-myth-truth, .ok-myth-card-container:focus .ok-myth-truth {
-    visibility: visible; 
+.ok-std-myths dd:hover .ok-myth-question {
+    text-decoration: none;    
 }
-
-
-
-
-
+.ok-std-myths dd:hover, .ok-std-myths dd:active, .ok-std-myths dd:focus {
+    color:#f4511e;
+}
 
 #about {
     background: #3e495a;
