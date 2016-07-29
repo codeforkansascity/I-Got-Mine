@@ -702,23 +702,32 @@ dl.ok-std-myths {
     margin: 10px auto;
 	counter-reset: ok-counter; /* setting up counter for list items */
 }
+.ok-std-myths dt:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.ok-std-myths dd:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
 .ok-std-myths dt {
-    position: relative;
     margin: 0;
     padding: 15px 90px 0 50px;
     font-weight: 100;
+    letter-spacing: 1px;
     background: #fff;
 }
 .ok-std-myths dt hr { 
     margin: 0; 
     padding:5px 0;
     border: 0; 
-    border-bottom: 1px dotted #666; 
+    border-bottom: 1px dotted #999; 
 }
 .ok-std-myths dd {
     position: relative;
     margin: 0;
     padding: 15px 90px 15px 50px;
+    letter-spacing: 1px;
     background: #eff1f4;
     color: #eff1f4;
     transition: all 0.45s ease-in 0s; 
