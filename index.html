@@ -220,8 +220,8 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
 <script src="js/tabletop.js"></script>
 <script src="js/lodash.js"></script>
 <script src="js/somemap.js"></script>
@@ -239,12 +239,15 @@ $(document).ready(function(){
     $('.navbar-toggle').click() //bootstrap 3.x by Richard
   });
   //bootstrap swipe fix
-  $(".carousel").swiperight(function() {  
-    $(".carousel").carousel('prev');  
+  $(".carousel").swipe({
+    swipe: function(e, direction) {  
+      if(direction === 'right'){
+        $(".carousel").carousel('prev');  
+      }else if(direction === 'left'){
+        $(".carousel").carousel('next');  
+      }
+    }
   });  
-  $(".carousel").swipeleft(function() {  
-    $(".carousel").carousel('next');  
-  });
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
