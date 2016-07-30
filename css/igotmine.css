@@ -697,6 +697,7 @@ p.ok-section-details {
 }
 
 /* The list of STD myths */
+
 dl.ok-std-myths {
     max-width: 700px;
     margin: 10px auto;
@@ -740,19 +741,21 @@ dl.ok-std-myths {
     left: 10px;
     top: 0;
     transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
     padding-top: 0;
     font-family: Quicksand, Montserrat, sans-serif;
     font-weight: 200;
     font-size: 60px;
     color: #f4511e;
 }
-/* true/false button */
-.ok-myth-question, .ok-myth-question-false {
+/* true/false buttons */
+.ok-myth-question, .ok-myth-question-false, .ok-myth-question-true {
     position: absolute;
     top: 0;
     right: 0;
     margin-right: 10px;
     transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
     width:80px;
     height:80px;
     padding-top: 18px;
@@ -770,7 +773,14 @@ dl.ok-std-myths {
     color:#f4511e;
     font-size: 8px;
 }
-.ok-std-myths dd:hover .ok-myth-question-false, .ok-std-myths dd:active .ok-myth-question-false, .ok-std-myths dd:focus .ok-myth-question-false {
+.ok-myth-question-true {
+    visibility: hidden;
+    border:0;
+    color:#397eda;
+    font-size: 8px;
+    background:#397eda;
+}
+.ok-std-myths dd:hover .ok-myth-question-false, .ok-std-myths dd:active .ok-myth-question-false, .ok-std-myths dd:focus .ok-myth-question-false, .ok-std-myths dd:hover .ok-myth-question-true, .ok-std-myths dd:active .ok-myth-question-true, .ok-std-myths dd:focus .ok-myth-question-true {
     visibility: visible; 
     padding-top: 27px;
     border:0;
@@ -781,9 +791,14 @@ dl.ok-std-myths {
 .ok-std-myths dd:hover .ok-myth-question {
     text-decoration: none;    
 }
+/* the magic disappearing text */
 .ok-std-myths dd:hover, .ok-std-myths dd:active, .ok-std-myths dd:focus {
     color:#f4511e;
 }
+.ok-std-myths dd.ok-std-myths-truth:hover, .ok-std-myths dd.ok-std-myths-truth:active, .ok-std-myths dd.ok-std-myths-truth:focus {
+    color:inherit;
+}
+
 
 #about {
     background: #3e495a;
