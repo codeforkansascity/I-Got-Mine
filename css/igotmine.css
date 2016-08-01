@@ -768,15 +768,16 @@ dl.ok-std-myths {
 .ok-myth-question-false {
     visibility: hidden;
     border:0;
-    color:#f4511e;
+    color:#ec2d2d;
     font-size: 8px;
+    background:#ec2d2d;
 }
 .ok-myth-question-true {
     visibility: hidden;
     border:0;
-    color:#87a525;
+    color:#00947d;
     font-size: 8px;
-    background:#87a525;
+    background:#00947d;
 }
 .ok-std-myths dd:hover .ok-myth-question-false, .ok-std-myths dd:active .ok-myth-question-false, .ok-std-myths dd:focus .ok-myth-question-false, .ok-std-myths dd:hover .ok-myth-question-true, .ok-std-myths dd:active .ok-myth-question-true, .ok-std-myths dd:focus .ok-myth-question-true {
     visibility: visible; 
@@ -791,10 +792,10 @@ dl.ok-std-myths {
 }
 /* the magic disappearing text */
 .ok-std-myths dd:hover, .ok-std-myths dd:active, .ok-std-myths dd:focus {
-    color:#f4511e;
+    color:#ec2d2d;
 }
 .ok-std-myths dd.ok-std-myths-truth:hover, .ok-std-myths dd.ok-std-myths-truth:active, .ok-std-myths dd.ok-std-myths-truth:focus {
-    color:#87a525;
+    color:#00947d;
 }
 
 
