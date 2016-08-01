@@ -329,7 +329,6 @@ a:hover {
     border: 0;
     font-size: 12px !important;
     line-height: 1.42857143 !important;
-    letter-spacing: 1px;
     border-radius: 0;
     font-family: Montserrat, sans-serif;
 }
@@ -776,9 +775,9 @@ dl.ok-std-myths {
 .ok-myth-question-true {
     visibility: hidden;
     border:0;
-    color:#397eda;
+    color:#87a525;
     font-size: 8px;
-    background:#397eda;
+    background:#87a525;
 }
 .ok-std-myths dd:hover .ok-myth-question-false, .ok-std-myths dd:active .ok-myth-question-false, .ok-std-myths dd:focus .ok-myth-question-false, .ok-std-myths dd:hover .ok-myth-question-true, .ok-std-myths dd:active .ok-myth-question-true, .ok-std-myths dd:focus .ok-myth-question-true {
     visibility: visible; 
@@ -796,7 +795,7 @@ dl.ok-std-myths {
     color:#f4511e;
 }
 .ok-std-myths dd.ok-std-myths-truth:hover, .ok-std-myths dd.ok-std-myths-truth:active, .ok-std-myths dd.ok-std-myths-truth:focus {
-    color:inherit;
+    color:#87a525;
 }
 
 
