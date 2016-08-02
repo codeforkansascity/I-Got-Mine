@@ -438,8 +438,8 @@ a:hover {
 .carousel-caption h3 {
     margin:0 0 20px;
     padding:5px;
-    color: #f4511e; 
-    background: rgba(255,255,255,0.9);
+    color: #fff; 
+    background: #f4511e;
 }
 .event-carousel-inner .item img {
     height: 400px;
