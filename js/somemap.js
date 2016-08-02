@@ -116,7 +116,7 @@ var event_carousel_template_compiled = _.template(
 '</div>'
 );
 var stdlocation_compiled = _.template(
-  '<div class="col-xs-6 col-md-4 ok-treatment">'+
+  '<div class="ok-treatment">'+
   '<h5><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
   't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+

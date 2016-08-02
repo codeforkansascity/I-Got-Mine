@@ -432,13 +432,14 @@ a:hover {
     margin: auto;
 }
 .carousel-caption {
+    padding-top:0;
     background: linear-gradient(rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.6));
 }
 .carousel-caption h3 {
-    margin:0 25px;
+    margin:0 0 20px;
     padding:5px;
     color: #f4511e; 
-    background: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.9);
 }
 .event-carousel-inner .item img {
     height: 400px;
@@ -458,23 +459,23 @@ h3 {
 p.ok-section-details {
     padding-bottom: 10px;
 }
-/* Treatment center info - OK */
-
+/* Treatment centers info */
+#std-treatment-list-section {
+    text-align: center;
+}
 .ok-treatment {
+    display:inline-block;
+    vertical-align: middle;
+    text-align: left;
     height: 380px;
+    width: 320px;
+    margin:0 8px 8px 0;
     padding: 20px 20px 10px;
     font-size: 14px;
     line-height: 1.4;
     background: #fff;
     border: solid #ccc 1px;
     border-radius: 6px;
-    min-height: 270px;
-    position: relative;
-}
-@media screen and (max-width: 768px) {
-    .ok-treatment {
-    height:auto;
-    }
 }
 .ok-treatment h5 {
     font-size: 22px;
@@ -482,25 +483,22 @@ p.ok-section-details {
     color: #ff6c2f;
     min-height: 34px;
 }
-
 .ok-treatment address {
     margin-bottom: 0;
     min-height: 40px;
 }
-
 .ok-treatment time {
     margin-top: 0;
     letter-spacing: 1px;
     color: #ff6c2f;
 }
-
 .ok-treatment .treatment-details {
     margin-top: 3px;
     line-height: 1.2;
     min-height: 70px;
 }
 
-/* STD cards */
+/* STD symptoms */
 
 .ok-warning-message {
     line-height: 1.8;
@@ -520,7 +518,7 @@ p.ok-section-details {
 }
 .std-card {
     display: inline-block;
-    margin-left: 8px;
+    margin-right: 8px;
     text-align: left;
 }
 /* flip the pane when hovered */
