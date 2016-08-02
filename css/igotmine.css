@@ -650,6 +650,10 @@ p.ok-section-details {
 
 .std-card-front-info {
     padding: 10px 20px 0;
+
+}
+.std-card-front-info p {
+        line-height: 1.5;
 }
 .std-card-front-info strong {
     display: block;
