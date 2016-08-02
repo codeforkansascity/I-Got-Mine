@@ -434,6 +434,12 @@ a:hover {
 .carousel-caption {
     background: linear-gradient(rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.6));
 }
+.carousel-caption h3 {
+    margin:0 25px;
+    padding:5px;
+    color: #f4511e; 
+    background: rgba(255,255,255,0.4);
+}
 .event-carousel-inner .item img {
     height: 400px;
 }
@@ -697,7 +703,7 @@ p.ok-section-details {
 /* The list of STD myths */
 
 dl.ok-std-myths {
-    max-width: 700px;
+    max-width: 655px;
     margin: 10px auto;
 	counter-reset: ok-counter; /* setting up counter for list items */
 }
