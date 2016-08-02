@@ -4,7 +4,10 @@ body {
     color: #818181;
     background: url("../images/igmikc-bkg-condom-large.png") no-repeat scroll 150px 100px, #FF6C2F;
 }
-
+#events, #stdinfo, #myth, #stdtreatment {
+    background-color: #e6e9ed;
+    border-top: 1px dashed #696969;
+}
 h1 {
     font-family: Montserrat, sans-serif;
     font-size: 36px;
@@ -218,9 +221,6 @@ a:hover {
 }
 #about {
     border-bottom: initial;
-}
-#events, #stdinfo {
-    background-color: #e6e9ed;
 }
 @media only screen and (max-device-width: 680px) {
     .container-fluid {
@@ -459,6 +459,7 @@ h3 {
 p.ok-section-details {
     padding-bottom: 10px;
 }
+
 /* Treatment centers info */
 #std-treatment-list-section {
     text-align: center;
@@ -702,8 +703,7 @@ p.ok-section-details {
     line-height: 1.4;
 }
 
-/* The list of STD myths */
-
+/* STD myths */
 dl.ok-std-myths {
     max-width: 655px;
     margin: 10px auto;
@@ -719,13 +719,13 @@ dl.ok-std-myths {
 }
 .ok-std-myths dt {
     margin: 0;
-    padding: 15px 90px 0 50px;
+    padding: 15px 90px 0 80px;
     font-weight: 100;
     letter-spacing: 1px;
     background: #fff;
 }
 .ok-std-myths dt hr { 
-    margin: 0; 
+    margin: 0 20px 0 0; 
     padding:5px 0;
     border: 0; 
     border-bottom: 1px dotted #999; 
@@ -733,7 +733,7 @@ dl.ok-std-myths {
 .ok-std-myths dd {
     position: relative;
     margin: 0;
-    padding: 15px 90px 15px 50px;
+    padding: 15px 90px 15px 80px;
     letter-spacing: 1px;
     background: #eff1f4;
     color: #eff1f4;
@@ -744,7 +744,7 @@ dl.ok-std-myths {
 	content: counter(ok-counter);
 	counter-increment: ok-counter;
     position:absolute;
-    left: 10px;
+    left: 25px;
     top: 0;
     transform: translate(0, -50%);
     -webkit-transform: translate(0, -50%);
@@ -753,6 +753,9 @@ dl.ok-std-myths {
     font-weight: 200;
     font-size: 60px;
     color: #f4511e;
+}
+.ok-std-myths dd:first-child:before  {
+    left: 35px;
 }
 /* true/false buttons */
 .ok-myth-question, .ok-myth-question-false, .ok-myth-question-true {
