@@ -477,6 +477,7 @@ p.ok-section-details {
     background: #fff;
     border: solid #ccc 1px;
     border-radius: 6px;
+    position: relative;
 }
 .ok-treatment h5 {
     font-size: 22px;
@@ -497,6 +498,13 @@ p.ok-section-details {
     margin-top: 3px;
     line-height: 1.2;
     min-height: 70px;
+}
+.ok-treatment .btn {
+    position: absolute;
+    bottom:20px;
+    left:50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
 }
 
 /* STD symptoms */
