@@ -108,7 +108,7 @@ var event_carousel_template_compiled = _.template(
   '<img class="img-responsive img-rounded" src="<%- event.EventImage %>" alt="Event 1">'+
   '<div class="carousel-caption">'+
     '<h3><%= event.Name %></h3>'+
-    '<p><%= event.Date %> <%= event.Days %> <%= event.Hours %></p>'+
+    '<p><%= event.Days %> <%= event.Hours %></p>'+
     '<p><%= event.Address %></p>'+
     '<p><%= event.Details %></p>'+
     '<button type="button" class="btn btn-secondary show-marker center-block l10n" data-type="event" data-id="<%= event.id %>" data-lkey="ViewOnMap">view on map</button>'+
@@ -251,7 +251,7 @@ function event_carousel_init() {
   var carousel_inner_html = '';
   if(events.length > 0){
     //sort
-    events.sort(function(a,b) {return new Date(a.Date) > new Date(b.Date)});
+    events.sort(function (a, b) {return new Date(a.Date) > new Date(b.Date)});
     events[0].Active = 'active';
     for(var i=events.length;i--;){
       carousel_inner_html += event_carousel_template_compiled({'event':events[i]});
