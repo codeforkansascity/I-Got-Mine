@@ -174,6 +174,25 @@ function geoJson_data_init(geoJs){
       infowindowdom.innerHTML = infowindow_compiled({'prop':self.prop});
       $(infowindowdom).addClass("activating");
     });
+
+    marker.addListener('mouseover', function() {
+      var self = this;
+
+      self.__tooltip = new google.maps.InfoWindow({
+        content: self.prop.Name
+      });
+
+      self.__tooltip.open(map, this);
+    });
+
+    marker.addListener("mouseout", function() {
+      var self = this;
+
+      if (self.__tooltip) {
+        self.__tooltip.close();
+      }
+    });
+
     markers.push(marker);
   }
   // if(carousel_inner_html === ''){
