@@ -53,7 +53,34 @@ a {
 a:hover {
     color: #397eda;
 }
-/* jumbotron (top of the screen) styles - OK */
+
+/*
+ * scrollToTop anchor icon
+ *
+ * 1. "magic number" values to line the icon up with the mobile menu icon
+ * 2. As along as this sits under the navigation's z-index value it should be good
+ * 3. Javscript will show this element when needed
+ */
+#scrollToTop {
+    position: fixed;
+    top: 70px; /* [1] */
+    right: 20px; /* [1] */
+    border: 2px solid #FF6C2F;
+    padding: 7px;
+    color: #FF6C2F;
+    font-size: 16px;
+    background: white;
+    z-index: 5000; /* [2] */
+    display: none; /* [3] */
+}
+
+#scrollToTop:hover, #scrollToTop:active, #scrollToTop:focus {
+    text-decoration: none;
+}
+
+/*
+ * jumbotron (top of the screen) styles - OK
+ */
 .jumbotron input[type="radio"] {
     display: none; 
 }
