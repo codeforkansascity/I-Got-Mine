@@ -311,6 +311,11 @@ $(document).ready(function(){
     } // End if
   });
 
+  // Toggle Myth answers on "True?" mobile touch
+  $('.ok-myth-question').on("touchstart", function (e) {
+    e.preventDefault();
+  });
+
   $(window).scroll(function() {
     $(".slideanim").each(function(){
       var pos = $(this).offset().top;
