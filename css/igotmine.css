@@ -809,6 +809,7 @@ dl.ok-std-myths {
     letter-spacing: 1px;
     border:solid 10px rgba(255,255,255,.3);
     background:#f4511e;
+    cursor:pointer;
     transition: all 0.25s ease-in 0s; 
 }
 .ok-myth-question-false {
