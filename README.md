@@ -5,7 +5,7 @@ The City of Kansas City, MO Health Department is engaging diverse communities ac
 ## The Problem/Description
 Every year, many residents of Kansas City forego services provided by the City of Kansas City, MO Health Department (KCHD). Due to various social determinates of care, those residents are unable to receive health-related services (offered by KCHD), and are many times unaware such services exist.  KCHD wishes to create a presence in underserved and underrepresented areas throughout Kansas City, MO via mobile outreach.  By promoting better sexual health practices, testing, and KCHD sponosored events, KCHD intends to make Kansas City a healthier city for all.  
 
-## Mockup (large screens)
+## Mockup (desktop)
 
 ![i got mine in kc layout 07](https://cloud.githubusercontent.com/assets/10410203/16285927/af98329e-389e-11e6-85e4-898f880c55dd.png)
 
@@ -17,26 +17,17 @@ Every year, many residents of Kansas City forego services provided by the City o
 
 * Project Lead, data management: Eric Dean
 * Shih-Wen Su (developer)
+* Oleh Kovalchuke (UX designer, CSS)
 * Jason Devore (developer)
-* Oleh Kovalchuke (UX, CSS)
+* Code for KC contributors: John Rake, John Kary, Paul Barham (see [Contributors:](https://github.com/codeforkansascity/I-Got-Mine/graphs/contributors?from=2016-04-17&to=2016-08-18&type=c))
+
 * Asssociate Members:  Samantha Hughes, Marquita Leverette, Bill Snook, and Denesha Snell
 
 ## What we need
 
-* Program designers
-* Community input
-* Additional project support (i.e. ideas concerning project design and implementation)
-
+* See [Issues](https://github.com/codeforkansascity/I-Got-Mine/issues)
 
 ## How to help
 
 * Come to [HackNights](http://www.meetup.com/KCBrigade/)
-* Attend HackKC this comming June 4th and 5th.
-* Contact your name on [Meetup](http://www.meetup.com/KCBrigade/)
-
-## Get Started
-
-* Install Git and [Jekyll](https://jekyllrb.com/)
-* `git clone git@github.com:codeforkansascity/I-Got-Mine.git`
-* `cd I-Got-Mine`
-* `jekyll serve`
+* Pick an [issue](https://github.com/codeforkansascity/I-Got-Mine/issues), fork the Repo and fix it.  
