@@ -2,6 +2,8 @@
 
 Every year, many residents of Kansas City forego services provided by the City of Kansas City, MO Health Department (KCHD). Due to various social determinates of care, those residents are unable to receive health-related services (offered by KCHD), and are many times unaware such services exist.  KCHD wishes to create a presence in underserved and underrepresented areas throughout Kansas City, MO via mobile outreach.  By promoting better sexual health practices, testing, and KCHD sponosored events, KCHD intends to make Kansas City a healthier city for all.  
 
+Current version of the website: [igotmineinkc.org](http://igotmineinkc.org]
+
 ## Mockup (desktop)
 
 ![i got mine in kc layout 07](https://cloud.githubusercontent.com/assets/10410203/16285927/af98329e-389e-11e6-85e4-898f880c55dd.png)
