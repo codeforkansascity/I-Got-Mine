@@ -4,6 +4,8 @@ Every year, many residents of Kansas City forego services provided by the City o
 
 Current version of the website: http://igotmineinkc.org.
 
+The philosophy from technical perspective to build this website is that we want it to be maintainable by non-programmer and the service can run smoothly at a low cost. The site is built on top of Github pages. Besides the benefit of convenient version control, the static pages, images and resources rendered by Github pages are automatically scaled and cached to give the best performance to the users. The dynamic content like the location information, events, cards and localized phrases are served from Google Sheets to ease the pain for non-technical member to access and update the critical site content. One aspect we need to continuously remind ourselves is that many of our users will access the site from their mobile devices. On that note, we need to work closely with designer to provide a screen-responsive, location-aware and bug-free site for main mobile browsers on different devices.
+
 ## Mockup (desktop)
 
 ![i got mine in kc layout 07](https://cloud.githubusercontent.com/assets/10410203/16285927/af98329e-389e-11e6-85e4-898f880c55dd.png)
@@ -15,10 +17,10 @@ Current version of the website: http://igotmineinkc.org.
 ## The Team
 
 * Project Lead, data management: Eric Dean
-* Shih-Wen Su (developer)
-* Oleh Kovalchuke (UX designer, CSS)
+* Shih-Wen Su (lead developer)
+* Oleh Kovalchuke (UX designer, CSS, project coordination)
 * Jason Devore (developer)
-* Code for KC contributors: John Rake, John Kary, Paul Barham (see [Contributors:](https://github.com/codeforkansascity/I-Got-Mine/graphs/contributors?from=2016-04-17&to=2016-08-18&type=c))
+* Code for KC contributors: John Rake, John Kary, Paul Barham (see [Contributors](https://github.com/codeforkansascity/I-Got-Mine/graphs/contributors?from=2016-04-17&to=2016-08-18&type=c))
 
 * Asssociate Members:  Samantha Hughes, Marquita Leverette, Bill Snook, and Denesha Snell
 
