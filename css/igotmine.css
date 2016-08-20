@@ -65,17 +65,21 @@ a:hover {
     position: fixed;
     top: 70px; /* [1] */
     right: 20px; /* [1] */
-    border: 2px solid #FF6C2F;
-    padding: 7px;
-    color: #FF6C2F;
+    border: 1px solid #FFF;
+    padding: 15px 10px 5px;
+    color: #FFF;
     font-size: 16px;
-    background: white;
+    background: #FF6C2F;
     z-index: 5000; /* [2] */
     display: none; /* [3] */
+    transition: all 0.25s ease-in 0s; 
 }
 
 #scrollToTop:hover, #scrollToTop:active, #scrollToTop:focus {
     text-decoration: none;
+    padding: 5px 10px 15px;
+    background: #ff7d47;
+    border-color: #ffa23c;
 }
 
 /*
@@ -845,22 +849,18 @@ dl.ok-std-myths {
     color:#00947d;
 }
 
-
 #about {
     background: #3e495a;
 }
-
 .about-description {
     color: #b7bdc5;
 }
-
 .about-logos {
     padding: 40px;
     margin-top: 55px;
     border-top: #b7bdc5 thin dotted;
     border-left: none;
 }
-
 @media screen and (min-width: 768px) {
     .about-logos {
         border-top: none;
