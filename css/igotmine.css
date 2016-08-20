@@ -651,6 +651,8 @@ p.ok-section-details {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; 
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 .flip-button button:hover,
 .flip-button button:active {
