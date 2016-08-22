@@ -32,13 +32,13 @@ Most of the styling is in igotmine.css. Map content styling is in somemap.css.
 
 ## The Team
 
-* Project Lead, data management: Eric Dean
+* Eric Dean (Project Lead, data management, Kansas City, MO Health Department)
 * Shih-Wen Su (lead developer)
 * Oleh Kovalchuke (UX designer, CSS, project coordination)
 * Jason Devore (developer)
 * Code for KC contributors: John Rake, John Kary, Paul Barham (see [Contributors](https://github.com/codeforkansascity/I-Got-Mine/graphs/contributors?from=2016-04-17&to=2016-08-18&type=c))
 
-* Asssociate Members:  Samantha Hughes, Marquita Leverette, Bill Snook, and Denesha Snell
+* Asssociate Members:  Samantha Hughes, Marquita Leverette, Bill Snook, and Denesha Snell (Kansas City, MO Health Department)
 
 ## What we need
 
