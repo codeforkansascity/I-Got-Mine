@@ -6,17 +6,21 @@ Current version of the website: http://igotmineinkc.org.
 
 The philosophy from technical perspective to build this website is that we want it to be maintainable by non-programmer and the service can run smoothly at a low cost. The site is built on top of Github pages. Besides the benefit of convenient version control, the static pages, images and resources rendered by Github pages are automatically scaled and cached to give the best performance to the users. The dynamic content like the location information, events, cards and localized phrases are served from Google Sheets to ease the pain for non-technical member to access and update the critical site content. One aspect we need to continuously remind ourselves is that many of our users will access the site from their mobile devices. On that note, we need to work closely with designer to provide a screen-responsive, location-aware and bug-free site for main mobile browsers on different devices.
 
-## Behind the screen
+## Implementation Notes
 
 All dynamic data (info about condom distribution sites, STD symptoms and treatment centers) are stored in several tabs in Google spreadsheet. In addition Spanish translations of both dynamic and static HTML content are stored in a separate tab of the spreadsheet. This enables a non-technical person to update the content in Excel-like interface without being exposed to the code.
 
-The data is pulled into HTML template by 'tabletop.js' Javascript. The script uses either column names stored in the first row of the spreadsheet, and, for Spanish/English translation, column letter in the spreadsheet.  
+The data is pulled into HTML template by 'tabletop.js' Javascript. The script uses column names stored in the first row of the spreadsheet, and, for Spanish/English translation, column letter in the spreadsheet (the column order is important, new columns for localized content should not be inserted, but rather appended at the end of the spreadsheet).
 
-Localazation (Spanish to English and English to Spanish) is done by 'l10n.js'. Note, that there are two English texts. One text is loaded from static HTML and, dynamically, from two main tabs in Google spreadsheet ('locations' and 'STDtesting'), when site loads. Another text is loaded from English text stored in 'localization' tab, when user toggles to Spanish and back to English in the UI.  
+Localization (Spanish to English and English to Spanish) is done by 'l10n.js'. Note, that there are two English texts. One text is loaded from static HTML and, dynamically, from two main tabs in Google spreadsheet ('locations' and 'STDtesting'), when site loads. Another text is loaded from English text stored in 'localization' tab, when user toggles to Spanish and back to English in the UI. The awareness of this dual location for the same copy will prevent some consternation when the content is edited.
 
 Interaction with the map and content displayed in the map (icons, site info) is via 'somemap.js'.
 
-STD card HTML template and flipping code is stored in std-card.js. Note, most of the flipping is controled in CSS.
+Bootstrap framework is used for top navigation, default button formatting, and glyphs. 
+
+Carousel Javascript is...
+
+STD card HTML template and flipping code is stored in std-card.js. Note, most of the flipping is done in CSS.
 
 'scroll-to-top.js' shows scroll to top button, only when it is needed.
 
