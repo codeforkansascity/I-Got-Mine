@@ -117,12 +117,16 @@ var event_carousel_template_compiled = _.template(
 );
 var stdlocation_compiled = _.template(
   '<div class="ok-treatment">'+
-  '<h5><%= prop.Name %></h5>'+
+  '<h5 class="treatment-headline"><%= prop.Name %></h5>'+
   '<address><%= prop.Address %></address>'+
+  '<a href="#" class="treatment-more">More Details</a>'+
+  '<a href="#" class="treatment-less">Less Details</a>'+
+  '<div class="treatment-toggleable">'+
   't: <a href="tel:<%= prop.PhoneNumber %>"><%= prop.PhoneNumber %></a><br />'+
   '<time><span class="l10n" data-lkey="<%= prop.Days %>"><%= prop.Days %></span> <%= prop.Hours %></time>'+
   '<section class="treatment-details"><strong class="l10n" data-lkey="Treated">Treated</strong>: <span class="l10n" data-lkey="<%= prop.LocalizationKey %>Treatment"><%= prop.Details %></span></section><br />'+
   '<button type="button" class="btn btn-secondary show-marker center-block l10n" data-type="treatment" data-id="<%= prop.id %>" data-lkey="ViewOnMap">view on map</button>'+
+  '</div>'+
   '</div>'
 );
 var infowindowdom = document.getElementById('info-window');
@@ -330,5 +334,27 @@ $(document).ready(function() {
     }, 1000);
     show_marker_by_id($(e.target).data('id'));
     return false;
+  });
+  $('#std-treatment-list-section').on('click', '.treatment-more', function (e) {
+    e.preventDefault();
+    var self = $(this);
+    self.hide();
+    // TODO: Better target .treatment-less node
+    self.next().show();
+    // TODO: Better target .treatment-details node
+    self.next().next().show(200);
+    // TODO: Better target h5
+    self.prev().prev().removeClass('treatment-headline');
+  });
+  $('#std-treatment-list-section').on('click', '.treatment-less', function (e) {
+    e.preventDefault();
+    var self = $(this);
+    self.hide();
+    // TODO: Better target .treatment-more node
+    self.prev().show();
+    // TODO: Better target .treatment-details node, else when we change HTML it will break
+    self.next().hide(200);
+    // TODO: Better target h5
+    self.prev().prev().prev().addClass('treatment-headline');
   });
 });
