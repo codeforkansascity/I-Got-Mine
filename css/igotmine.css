@@ -196,6 +196,30 @@ a:hover {
     background: url("../images/igmikc-map-icon-treatment.png") no-repeat 2px 2px, #e1e1e1;
     transition: all 0.15s linear 0s;  
 }
+.treatment-more, .treatment-less {
+    display:none;
+}
+.treatment-headline {
+    background:none;
+}
+.treatment-toggleable {
+    display:block;
+}
+@media print, screen and (max-width: 740px) {
+    #std-treatment-list-section .ok-treatment {
+        height:auto;
+    }
+    .treatment-headline {
+        background: url("../images/igmikc-map-icon-treatment.png") no-repeat;
+        padding-left: 38px;
+    }
+    .treatment-more {
+        display:block;
+    }
+    .treatment-less, .treatment-toggleable {
+        display:none;
+    }
+}
 
 [data-type="condom"]:hover {
     padding: 8px 15px 8px 40px;
