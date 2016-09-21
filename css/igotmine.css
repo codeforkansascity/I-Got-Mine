@@ -552,7 +552,10 @@ p.ok-section-details {
 @media print, screen and (max-width: 768px) {
     #std-treatment-list-section .ok-treatment {
         height:auto;
-        padding-bottom:40px;
+        padding-bottom:20px;
+    }
+    .ok-treatment .treatment-details {
+        padding-bottom:30px;
     }
     .treatment-headline {
         background: url("../images/igmikc-map-icon-treatment.png") no-repeat;
