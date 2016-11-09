@@ -499,7 +499,7 @@ p.ok-section-details {
     display:inline-block;
     vertical-align: middle;
     text-align: left;
-    height: 380px;
+    height: 420px;
     width: 320px;
     margin:0 8px 8px 0;
     padding: 20px 20px 10px;
@@ -538,7 +538,7 @@ p.ok-section-details {
     -webkit-transform: translate(-50%, 0);
 }
 
-/* classes for treatment center cards toggle on mobile screens */
+/* classes for treatment center card toggle on mobile screens */
 .treatment-more, .treatment-less {
     display:none;
 }
