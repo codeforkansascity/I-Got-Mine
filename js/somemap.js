@@ -1,7 +1,8 @@
 var IMAGE_URLS = {
   CONDOM: "images/igmikc-map-icon-condom.png",
   EVENT: "images/igmikc-map-icon-event.png",
-  TREATMENT: "images/igmikc-map-icon-treatment.png"
+  TREATMENT: "images/igmikc-map-icon-treatment.png",
+  PREP: "images/igmikc-map-icon-prep.png"
 };
 var DEFAULT_EVENT_IMAGES = ['http://i.imgur.com/dtHaKF6.jpg','http://i.imgur.com/Szs6sUL.jpg'];
 var DEFAULT_EVENT_IMAGE = DEFAULT_EVENT_IMAGES[0];
@@ -12,7 +13,8 @@ var DEFAULT_MAP_CENTER = {
 var POINT_TYPE = {
   CONDOM: 'condom',
   EVENT: 'event',
-  TREATMENT: 'treatment'
+  TREATMENT: 'treatment',
+  PREP: 'prep'
 };
 var map;
 
@@ -158,7 +160,10 @@ function geoJson_data_init(geoJs){
       icon_url = IMAGE_URLS.TREATMENT;
       fp.properties.Title = 'STD Treatment Center';
       std_html += stdlocation_compiled({'prop':fp.properties});
-    }else{
+    }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.PREP){
+		icon_url = IMAGE_URLS.PREP;
+		fp.properties.Title = 'PrEP';
+	}else{
       icon_url = IMAGE_URLS.CONDOM;
     }
     marker = new google.maps.Marker({

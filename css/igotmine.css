@@ -197,6 +197,12 @@ a:hover {
     transition: all 0.15s linear 0s;  
 }
 
+[data-type="prep"] {
+    padding: 8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-prep.png") no-repeat 2px 2px, #e1e1e1;
+    transition: all 0.15s linear 0s;  
+}
+
 [data-type="condom"]:hover {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-condom-selected.png") no-repeat 2px 2px, #eee;
@@ -210,6 +216,11 @@ a:hover {
 [data-type="treatment"]:hover {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #eee;
+}
+
+[data-type="prep"]:hover {
+    padding: 8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-prep-selected.png") no-repeat 2px 2px, #eee;
 }
 
 [data-type="condom"]:active {
@@ -226,6 +237,12 @@ a:hover {
     padding: 8px 15px 8px 40px;
     background: url("../images/igmikc-map-icon-treatment-selected.png") no-repeat 2px 2px, #d4d4d4;
 }
+
+[data-type="prep"]:active {
+    padding: 8px 15px 8px 40px;
+    background: url("../images/igmikc-map-icon-prep-selected.png") no-repeat 2px 2px, #d4d4d4;
+}
+
 /* formatting of 'view on map' button in events carousel. */
 #myCarousel [data-type="event"] {
     padding: 8px 15px 8px 40px;

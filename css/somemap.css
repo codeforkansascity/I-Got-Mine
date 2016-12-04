@@ -40,7 +40,7 @@ h1.infowindow{
   width: 90%;
   max-width: 400px;
 }
-.type-condom, .type-event, .type-treatment {
+.type-condom, .type-event, .type-treatment, .type-prep {
     padding: 7px 0 7px 40px;
     font-size: 12px;
     font-weight:800;
@@ -55,6 +55,9 @@ h1.infowindow{
 }
 .type-treatment {
     background-image: url("../images/igmikc-map-icon-treatment.png");
+}
+.type-prep {
+    background-image: url("../images/igmikc-map-icon-prep.png");
 }
 .ok-event h5 {
     font-size: 24px;
