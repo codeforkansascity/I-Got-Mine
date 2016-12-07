@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>I Got Mine In KC - Free condoms and more from the Kansas City, MO Health Department</title>
@@ -20,7 +20,7 @@
  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-80664608-1', 'auto');
  ga('send', 'pageview');</script>  
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body onclick="clearError();" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -80,18 +80,27 @@
         <button type="button" class="btn btn-secondary highlight-marker l10n" data-type="condom" data-lkey="Condoms">Condoms</button>
         <button type="button" class="btn btn-secondary highlight-marker l10n" data-type="event" data-lkey="Events">Events</button>
         <button type="button" class="btn btn-secondary highlight-marker l10n" data-type="treatment" data-lkey="STDTreatment">STD Treatment</button>
-		<button type="button" class="btn btn-secondary highlight-marker" data-type="prep">PrEP</button>
-      </div>
+		<button type="button" class="btn btn-secondary highlight-marker" data-type="prep">PrEP</button>	
+		
+		<form class="zip-form" action="javascript:zipSearch();">
+			<input placeholder="Zip" style="width: 60px;" type="text"  id="zipSearch" maxlength="5" onkeypress="return digitInputHandler(event)" />	
+			<div class="popup" onclick="myFunction()">
+				<input type="submit" value="Search" /> 	
+				<span class="popuptext" id="myPopup">Oops, no such Zip code in Kansas City.</span>
+			</div>
+		</form>					
+      </div>	 
       <div class="map-frame">
         <div id="googleMap" class="googleMap"></div>
         <div id="info-window" class="info-window"></div>
       </div>
       <p class="alert alert-success l10n"  data-lkey="MapTip"><strong>Tip:</strong> Click an icon to view description of condom distribution site</p>
-
     </div>
   </div>
 </div>
 
+
+	  
 <div class="container-fluid" id="events">
   <div class="row">
     <div class="col-sm-12">
