@@ -40,7 +40,7 @@ h1.infowindow{
   width: 90%;
   max-width: 400px;
 }
-.type-condom, .type-event, .type-treatment {
+.type-condom, .type-event, .type-treatment, .type-prep {
     padding: 7px 0 7px 40px;
     font-size: 12px;
     font-weight:800;
@@ -55,6 +55,9 @@ h1.infowindow{
 }
 .type-treatment {
     background-image: url("../images/igmikc-map-icon-treatment.png");
+}
+.type-prep {
+    background-image: url("../images/igmikc-map-icon-prep.png");
 }
 .ok-event h5 {
     font-size: 24px;
@@ -97,3 +100,67 @@ h1.infowindow{
 .icon-social-instagram:hover {
     background: url("../images/igmikc-social-instagram.png") no-repeat 7px 6px, #386fb8;     
 }
+ /* Popup container */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;}
+
+/* The actual popup (appears below) */
+.popup .popuptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -150%;
+    left: 50%;
+    margin-left: -150px;
+}
+
+/* Popup arrow - points up */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent #555 transparent;
+}
+
+/* Use classList.add to show pop up, classList.remove to hide pop up */
+.popup .error-zip {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.zip-form{
+	display:inline; 
+	margin-left:20px;	
+}
+@media screen and (max-width: 768px) {
+	.zip-form{
+	display:inline-block; 
+	margin-left:0px;
+	position:inherit;
+	}
+}
+

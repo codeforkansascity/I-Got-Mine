@@ -1,7 +1,8 @@
 var IMAGE_URLS = {
   CONDOM: "images/igmikc-map-icon-condom.png",
   EVENT: "images/igmikc-map-icon-event.png",
-  TREATMENT: "images/igmikc-map-icon-treatment.png"
+  TREATMENT: "images/igmikc-map-icon-treatment.png",
+  PREP: "images/igmikc-map-icon-prep.png"
 };
 var DEFAULT_EVENT_IMAGES = ['http://i.imgur.com/dtHaKF6.jpg','http://i.imgur.com/Szs6sUL.jpg'];
 var DEFAULT_EVENT_IMAGE = DEFAULT_EVENT_IMAGES[0];
@@ -12,9 +13,27 @@ var DEFAULT_MAP_CENTER = {
 var POINT_TYPE = {
   CONDOM: 'condom',
   EVENT: 'event',
-  TREATMENT: 'treatment'
+  TREATMENT: 'treatment',
+  PREP: 'prep'
 };
 var map;
+var digitsOnly = /[1234567890]/g; // for zip code input
+var SEARCH_ZOOM = 12; // zoom value for seach by zip
+var VALID_ZIP_CODES = [64101, 64102, 64105, 64108, 64109, 64110, 64111, 64112, 64113, 64114, 64116, 64117,
+64118, 64120, 64123, 64124, 64125, 64126, 64127, 64128, 64129, 64130, 64131, 64132, 64133, 64134, 64136,
+64137, 64138, 64139, 64145, 64146, 64147, 64150, 64151, 64152, 64153, 64154, 64155, 64156, 64157, 64158,
+64161, 64163, 64164, 64165, 64166, 64167, // KC MO
+66101, 66102, 66109, 66110, 66111, 66112, 66119, 66160, 66103, 66104, 66105, 66106, 66115, 66117, 66118, // KC KS
+66206, 66209, 66211,  // Leawood
+66215, 66219, 66220, 66227, 66285, // Lenexa
+66201, 66202, 66205, 66222, // Mission
+66113, // Edwardsville
+66051, 66061, 66062, 66063, // Olathe
+66204, 66207, 66213, 66210, 66212, 66214, 66224, 66225, 66251, 66283, 66221, 66223, 66282, // Overland Park
+66203, 66216, 66217, 66218, 66286, 66226, // Shawnee
+66208, // Prairie Village
+66250, 66276]; // Shawnee Mission
+
 
 function mobileAndTabletcheck() {
   var check = false;
@@ -50,6 +69,75 @@ function initialize() {
   }
 }
 
+// Called from body, allows clearing error message if the user clicks anywhere
+function clearError()
+{
+	var popup = document.getElementById('myPopup');
+	popup.classList.remove('error-zip');
+}
+// Search VALID_ZIP_CODES for valid zip code
+function isValidCode(code)
+{
+	for(var i = 0; i < VALID_ZIP_CODES.length; i++)
+		if(VALID_ZIP_CODES[i] == code) return true;
+	return false;
+}
+
+// When the user clicks on <div>, open the popup
+function myFunction() {
+    
+}
+
+function zipSearch()
+{		
+	// Get Zip code from input field
+	var address = document.getElementById("zipSearch").value;
+	
+	// Restrict to Kansas City Zip Codes
+	if(isValidCode(address)) 
+	{	
+		// Get Geocoder
+		var geocoder = new google.maps.Geocoder();	
+	
+		geocoder.geocode( { 'address': address}, function(results, status) 
+		{
+			// If valid address
+			if (status == 'OK') 
+			{		
+				// Pans to location on map
+				moveToLocation(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+				map.setZoom(SEARCH_ZOOM);
+				clearError();
+			}
+			else
+			{
+				var popup = document.getElementById('myPopup');
+				popup.classList.add('error-zip');
+			}
+		});	
+	}
+	// Display error message if not a KC zip code
+	else
+	{
+		var popup = document.getElementById('myPopup');
+		popup.classList.add('error-zip');
+	}
+}
+function digitInputHandler(event)
+{
+         var charCode = event.key; // or code
+		 //console.log("Code is" + event.code);
+		 //console.log("Key is" + event.key);		 
+		 
+		 if(event.key.match(digitsOnly)) return true;
+		 if(event.key == "Backspace" || event.key == "Enter" || event.key == "Delete" || event.key == "ArrowLeft" || event.key == "ArrowRight") return true;
+		 return false;	       
+}
+
+function moveToLocation(lat, lng){
+     var center = new google.maps.LatLng(lat, lng);     
+     map.panTo(center);
+  }
 
 function location_data_to_geoJson (data) {
   var gj = {'type':'FeatureCollection','features':[]},
@@ -158,7 +246,10 @@ function geoJson_data_init(geoJs){
       icon_url = IMAGE_URLS.TREATMENT;
       fp.properties.Title = 'STD Treatment Center';
       std_html += stdlocation_compiled({'prop':fp.properties});
-    }else{
+    }else if(fp.properties.Type.toLowerCase() == POINT_TYPE.PREP){
+		icon_url = IMAGE_URLS.PREP;
+		fp.properties.Title = 'PrEP';
+	}else{
       icon_url = IMAGE_URLS.CONDOM;
     }
     marker = new google.maps.Marker({
