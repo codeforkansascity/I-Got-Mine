@@ -48,3 +48,8 @@ Most of the styling is in igotmine.css. Map content styling is in somemap.css.
 
 * Come to [Code for KC HackNights](http://www.meetup.com/KCBrigade/)
 * Pick an [issue](https://github.com/codeforkansascity/I-Got-Mine/issues), fork the Repo and fix it.  
+
+
+## Updating the code
+
+See UPDATE.md
