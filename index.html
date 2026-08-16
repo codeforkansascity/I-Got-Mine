@@ -7,8 +7,9 @@
   <link href="images/favicon.png" rel="shortcut icon" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/igotmine.css">
-  <link rel="stylesheet" href="../css/somemap.css">
+  <link rel="stylesheet" href="css/igotmine.css">
+  <link rel="stylesheet" href="css/somemap.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:400,300,700">
@@ -99,7 +100,7 @@
         <h2 class="l10n" data-lkey="UpcomingEvents">Upcoming Events</h2>
         <h3 class="l10n" data-lkey="UpcomingEventsCaption">Get hooked up before you hook up.  Attend a community event near you. Receive free condoms, get free STD testing, or learn more about STDs.</h3>
       </div>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div id="myCarousel" class="carousel slide">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -267,17 +268,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="js/jquery.touchSwipe.min.js"></script>
-<script src="js/tabletop.js"></script>
 <script src="js/lodash.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="js/somemap.js"></script>
 <!-- <script src="js/events.js"></script> -->
 <!-- <script src="js/flipper.js"></script> -->
 <script src="js/std-card.js"></script>
 <script src="js/scroll-to-top.js"></script>
 <script src="js/l10n.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYZNai78yjsnVwXE8h96Lo-f7WSCDL-t0&libraries=visualization&callback=initialize">
-    </script>
+<script src="js/sheets.js"></script>
 <script>
 $(document).ready(function(){
   //close menu on select
@@ -331,22 +330,29 @@ $(document).ready(function(){
         }
     });
   });
-  //load google sheet data
-    Tabletop.init({ key: '1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0',
-    callback: function(data, tabletop) {
+  initialize();
+  // Load the public Google Sheet through the supported Visualization endpoint.
+  loadSiteData('1OsCBjUnhUYDjt86opGTe-iswhfSVC39d-9aRIKIzZI0').then(function(data) {
       //locations
-      var locations = data.Locations.elements;
+      var locations = data.Locations;
       var geoJs = location_data_to_geoJson(locations);
       geoJson_data_init(geoJs);
       //events
       event_carousel_init();
+      $('#myCarousel').carousel({ interval: 5000 });
       //std cards
-      var stds = data.Stdtesting.elements;
+      var stds = data.Stdtesting;
       init_std_cards(stds);
       //localization
-      init_l10n(data.Localization.elements);
-    },
-    simpleSheet: false } );
+      init_l10n(data.Localization);
+    }).catch(function(error) {
+      console.error('Unable to load site data:', error);
+      event_carousel_init();
+      document.getElementById('std-treatment-list-section').innerHTML =
+        '<p class="alert alert-warning">Location information is temporarily unavailable.</p>';
+      document.getElementById('std-card-list-section').innerHTML =
+        '<p class="alert alert-warning">Health information is temporarily unavailable.</p>';
+    });
 })
 </script>
 </body>

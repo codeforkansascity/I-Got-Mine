@@ -4,6 +4,7 @@ function init_l10n(t) {
 }
 function change_language(language) {
   var lkey, translation;
+  if (!translations || !translations.length) return;
   current_language = language;
   for(var i=translations.length;i--;){
     console.log(translations[i]['Language']);
@@ -13,7 +14,7 @@ function change_language(language) {
       break;
     }
   }
-  console.log(translation['UpcomingEvents']);
+  if (!translation) return;
   $('.l10n').each(function(k, el) {
     lkey = $(el).data('lkey');
     if(translation && translation.hasOwnProperty(lkey)){

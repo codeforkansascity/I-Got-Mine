@@ -22,30 +22,25 @@ function mobileAndTabletcheck() {
   return check;
 }
 function showMap (center) {
-  map = new google.maps.Map(document.getElementById('googleMap'), {
-    center:center,
-    zoom:11,
-    scrollwheel:false,
-    draggable:true,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  });
+  map = L.map('googleMap', { scrollWheelZoom: false }).setView(center, 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
 
   //add current location as center if the user is on mobile phone
   if(mobileAndTabletcheck()){
-    var myMarker = new google.maps.Marker({
-      position: center,
-      map: map,
-    });
+    L.marker(center).addTo(map);
   }
 }
 function initialize() {
   //the timeout of geolocation.getCurrentPosition doesn't work in some browsers
   //show the map first, re-center if we can get user location
-  var myCenter = new google.maps.LatLng(DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG);
+  var myCenter = [DEFAULT_MAP_CENTER.LAT, DEFAULT_MAP_CENTER.LNG];
   showMap(myCenter);
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      map.setCenter({lat:position.coords.latitude,lng:position.coords.longitude});
+      map.setView([position.coords.latitude, position.coords.longitude]);
     });
   }
 }
@@ -132,6 +127,21 @@ var stdlocation_compiled = _.template(
 var infowindowdom = document.getElementById('info-window');
 var markers = [];
 var events = [];
+
+function marker_icon(url) {
+  return L.icon({
+    iconUrl: url,
+    iconSize: [30, 32],
+    iconAnchor: [15, 32],
+    tooltipAnchor: [0, -28]
+  });
+}
+
+function set_marker_icon(marker, url) {
+  marker.icon = url;
+  marker.setIcon(marker_icon(url));
+}
+
 function geoJson_data_init(geoJs){
   var i, e, coords, lat_lng, marker, fp, icon_url, std_html='';
   var thres_date = new Date();
@@ -139,8 +149,11 @@ function geoJson_data_init(geoJs){
   for (var i = 0; i < geoJs.features.length; i++) {
     fp = geoJs.features[i];
     coords = fp.geometry.coordinates;
-    lat_lng = new google.maps.LatLng(coords[1],coords[0]);
-    fp.properties.id = i;
+    lat_lng = [Number(coords[1]), Number(coords[0])];
+    if (!isFinite(lat_lng[0]) || !isFinite(lat_lng[1])) continue;
+    // Use the marker array index so buttons still target the right marker if a
+    // malformed row was skipped above.
+    fp.properties.id = markers.length;
     if(fp.properties.Type.toLowerCase() == POINT_TYPE.CONDOM){
       icon_url = IMAGE_URLS.CONDOM;
       fp.properties.Title = 'Free Condoms';
@@ -161,41 +174,18 @@ function geoJson_data_init(geoJs){
     }else{
       icon_url = IMAGE_URLS.CONDOM;
     }
-    marker = new google.maps.Marker({
-      position: lat_lng,
-      map: map,
-      icon: icon_url,
-      prop: fp.properties
-    });
-    marker.addListener('click', function() {
+    marker = L.marker(lat_lng, { icon: marker_icon(icon_url) }).addTo(map);
+    marker.icon = icon_url;
+    marker.prop = fp.properties;
+    marker.on('click', function() {
       // console.log('clicked');
-      // var infowindow = new google.maps.InfoWindow({
-      //   content: markerInfoWindowContent(this)
-      // });
-      // infowindow.open(map, this);
       var self = this
       console.log(self.prop);
       infowindowdom.innerHTML = infowindow_compiled({'prop':self.prop});
       $(infowindowdom).addClass("activating");
     });
 
-    marker.addListener('mouseover', function() {
-      var self = this;
-
-      self.__tooltip = new google.maps.InfoWindow({
-        content: self.prop.Name
-      });
-
-      self.__tooltip.open(map, this);
-    });
-
-    marker.addListener("mouseout", function() {
-      var self = this;
-
-      if (self.__tooltip) {
-        self.__tooltip.close();
-      }
-    });
+    marker.bindTooltip(String(marker.prop.Name || ''));
 
     markers.push(marker);
   }
@@ -221,15 +211,14 @@ function show_marker_by_id(id){
   for(var i=markers.length;i--;){
     m = markers[i];
     if(m.icon.indexOf('-selected') !== -1){
-      m.setIcon(m.icon.replace('-selected.', '.'));
+      set_marker_icon(m, m.icon.replace('-selected.', '.'));
     }
   }
   m = markers[id];
   if(typeof m !== 'undefined'){
-    m.setIcon(m.icon.replace('.', '-selected.'));
-    m.setZIndex(10000);
-    map.setCenter(m.getPosition());
-    map.setZoom(14);
+    set_marker_icon(m, m.icon.replace('.', '-selected.'));
+    m.setZIndexOffset(10000);
+    map.setView(m.getLatLng(), 14);
   }
   return m;
 }
@@ -238,13 +227,13 @@ function highlight_markers_by_type (marker_type) {
   for(var i=markers.length;i--;){
     m = markers[i];
     if(m.icon.indexOf('-selected') !== -1){
-      m.setIcon(m.icon.replace('-selected.', '.'));
-      m.setZIndex(100);
+      set_marker_icon(m, m.icon.replace('-selected.', '.'));
+      m.setZIndexOffset(100);
     }
     if(m.prop.Type.toLowerCase() === marker_type.toLowerCase() &&
       m.icon.indexOf('-selected') === -1){
-      m.setIcon(m.icon.replace('.', '-selected.'));
-      m.setZIndex(9999);
+      set_marker_icon(m, m.icon.replace('.', '-selected.'));
+      m.setZIndexOffset(9999);
     }
   }
 }
@@ -295,11 +284,7 @@ function event_carousel_init() {
 window.eqfeed_callback = function(results) {
   for (var i = 0; i < results.features.length; i++) {
     var coords = results.features[i].geometry.coordinates;
-    var latLng = new google.maps.LatLng(coords[1],coords[0]);
-    var marker = new google.maps.Marker({
-      position: latLng,
-      map: map
-    });
+    L.marker([coords[1], coords[0]]).addTo(map);
   }
 }
 $(document).ready(function() {
